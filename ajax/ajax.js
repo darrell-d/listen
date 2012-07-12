@@ -2,6 +2,19 @@
 //Store the reference to XMLHttpRequest object
 var xmlHttp = createXmlHttpRequestObject();
 
+function update()
+{
+	if(xmlHttp.readyState ==4)
+	{
+		document.getElementById("action").innerHTML = xmlHttp.responseText;
+		console.log("!");
+	}
+	else
+	{
+		console.log("no go");
+	}
+}
+
 function createXmlHttpRequestObject()
 {
 	//stores the reference to XMLHttpReqiest
@@ -62,18 +75,5 @@ function loadNewPost()
 	else
 	{
 		setTimeout('loadNewPost()',1000);
-	}
-}
-
-function update()
-{
-	if(xmlHttp.readyState ==4)
-	{
-		document.getElementById("action").innerHTML = xmlHttp.responseText;
-		console.log("!");
-	}
-	else
-	{
-		console.log("no go");
 	}
 }
