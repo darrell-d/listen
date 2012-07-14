@@ -1,10 +1,12 @@
 <?php
-	include($_SERVER['DOCUMENT_ROOT'] . '/config.php'); // Configuration files
-	include('MySQL.php'); //SQL connection
+    session_start();
+    
+	include("config.php"); // Configuration files
+	include("MySQL.php"); //SQL connection
 	
-	global $mySQL_connection;	
+	global $mySQL_connection;
 	$mySQL_connection = new MySQL($mysql_server,$mysql_user,$mysql_pass,$mysql_db);
-	
+        $_SESSION['mySQL_connection'] = $mySQL_connection;
 	//Print out posts
 	function printPosts($id,$title, $post,$author,$date,$tags)
 	{
@@ -43,6 +45,18 @@
 			</div>
 		";
 	}
+        function printHeader($title)
+        {
+            echo
+            "
+                    <link rel='stylesheet' type='text/css' href='style.css' />
+                    <title>". $title ."</title>
+                    <meta name ='description' content = '". $description."'>
+                    <meta name ='keywords' content = '".  $keywords."'>
+                    <meta name ='author' content = '".  $author."'>
+                    <meta charset = '".  $charset."'> 
+            ";
+        }
 	
 	//Print out the Nav bar
 	function printNav($pageName)

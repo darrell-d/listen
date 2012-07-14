@@ -1,6 +1,7 @@
 <?php
+session_start();
 /*****Dev Settings*****/
-error_reporting(E_ALL);
+//error_reporting(E_ALL);
 /*****End Dev Settings*****/
 include('classes/Common.php');
 
@@ -9,7 +10,7 @@ include('classes/Common.php');
 <html>
 <head>
 
-<? printHeader("darrelld - Index!");?>
+<? printHeader("darrelld - Index!"); ?>
 
 </head>
 <body>

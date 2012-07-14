@@ -20,7 +20,7 @@ if($_SESSION['priv'] != "Owner")
 	<script language = "javascript" type="text/javascript" src="../ajax/ajax.js"></script>
 </head>
 
-<body onload = 'loadNewPost()'>
+<body onload = 'loadPanel("new.php")'>
 	<h1>Welcome admin!</h1>
 	<span id = "admin_area">
 		<form action = 'newpost.php' method='POST'>
