@@ -1,12 +1,14 @@
 <?php 
-	session_start();
+//TODO:Allow for deleting multiple posts at once
+session_start();
+include('../classes/Common.php');
+	
 	if(isset($_POST['deletePostGo']))
 	{
 		//TODO: Scrub and clean data later
-		$mysqli = new mysqli('ddefreitas.startlogicmysql.com','ddefreitas','understand','my_site');
 		$query = "DELETE FROM posts WHERE id = '". $_SESSION['id'] ."'";
-		$mysqli->query($query) or die($mysqli->error);
-		header('Location: adminPanel.php');
+		$mySQL_connection->query($query) or die($mySQL_connection->error);
+		header('Location: adminPanel.php?result=Post sucessfully deleted');
 	}
 ?>
 
@@ -16,9 +18,6 @@
 	<link rel="stylesheet" type="text/css" href="../style.css" />
 </head>
 <?php
-//Connect to DB
-$mysqli = new mysqli('ddefreitas.startlogicmysql.com','ddefreitas','understand','my_site');
-include('../classes/Common.php');
 //Get the current ID
 if(isset($_POST['id']))
 {
@@ -26,18 +25,22 @@ if(isset($_POST['id']))
 }
 
 $query = "SELECT *  FROM posts WHERE id = '" . $_SESSION['id'] . "'";
-$result = $mysqli->query($query);
+$result = $mySQL_connection->query($query);
 $data= $result->fetch_assoc();
 ?>
 <body>
 	
-	<span id = "body" style = "background:#dd0011;">
+	<span id ="delConf">
 	Are you sure you want to delete this post below? (No take backs)
+        </span>
 	<?php printPosts($_SESSION['id'],$data['title'], $data['post'],$data['poster'],$data['date'],$data['tags']); ?>
 	<form action ='deletePost.php' method ='POST'>
-		<input type ='submit' name ='YES' value = 'YES'><input type ='submit' name ='NO' value ='NO'>
+            <center>
+		<input type ='submit' name ='YES' value = 'YES'>
+                <input type ='submit' name ='NO' value ='NO'>
+            </center>
 		<input type ='hidden' name = 'deletePostGo' value ='true'>
 	</form>
-	</span>
+	
 </body>
 </html>

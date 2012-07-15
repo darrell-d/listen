@@ -173,6 +173,11 @@ body
 	width:25%;
 	display:inline;
 }
+#delConf
+{
+    background:#dd0011; 
+    margin-left:25%;
+}
 #footer
 {
 	-webkit-border-top-left-radius: 50px;

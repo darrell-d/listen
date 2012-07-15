@@ -1,6 +1,5 @@
 <?php
-/*TODO:
-* Delete Post
+/*TODO:* Delete Post
 * Edit post
 */
 
@@ -22,11 +21,18 @@ if($_SESSION['priv'] != "Owner")
 
 <body onload = 'loadPanel("new.php")'>
 	<h1>Welcome admin!</h1>
+        <span id = "notification">
+            <?
+                if(isset($_GET['result']))
+                {
+                    //TODO: Write clean function for $_GET and $_POST data
+                    echo $_GET['result'];
+                }
+            ?>
+        </span>
 	<span id = "admin_area">
-		<form action = 'newpost.php' method='POST'>
 		<div id = 'action'>
 		</div>
-		</form>
 	</span>
 </body>
 

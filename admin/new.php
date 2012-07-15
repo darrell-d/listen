@@ -1,5 +1,6 @@
 <?php
 echo "
+<form action = 'newpost.php' method='POST'>
 <fieldset>
 <legend style = 'background:#231243; size:30px; padding: 5px;'>New Post</legend>
 <legend><a href= javascript:onclick=loadPanel('edit.php')>Edit Post</a></legend>
@@ -10,5 +11,7 @@ echo "
 	Tags: <input type = 'text' size = '50' name = 'tags'> <br>
 	<input type = 'submit' name = 'newPostGo' value='Post!'>
 </fieldset>
+</form>
+
 ";
 ?>
