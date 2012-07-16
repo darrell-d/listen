@@ -1,12 +1,18 @@
 <?php 
 	session_start();
+        include('../classes/Common.php');
 	if(isset($_POST['editPostGo']))
 	{
-		//TODO: Scrub and clean data later
-		$mysqli = new mysqli('ddefreitas.startlogicmysql.com','ddefreitas','understand','my_site');
-		$query = "UPDATE posts SET title = '". $_POST['title'] ."', post = '". $_POST['post'] ."', tags = '".  $_POST['tags']."' WHERE id = '".  $_SESSION['id']."'";
-		$mysqli->query($query) or die($mysqli->error);
-		Echo "Post sucessfully updated";
+            //TODO: Scrub and clean data later
+            $title = addslashes($_POST['title']);
+            $post = addslashes($_POST['post']);
+            $tags = addslashes($_POST['tags']);
+            $id = addslashes($_SESSION['id']);
+            
+            
+            $query = "UPDATE posts SET title = '". $title ."', post = '". $post ."', tags = '".  $tags."' WHERE id = '".  $id."'";
+            $mySQL_connection->query($query) or die($mySQL_connection->error);
+            echo "Post sucessfully updated";
 	}
 ?>
 
@@ -16,8 +22,6 @@
 	<link rel="stylesheet" type="text/css" href="../style.css" />
 </head>
 <?php
-//Connect to DB
-$mysqli = new mysqli('ddefreitas.startlogicmysql.com','ddefreitas','understand','my_site');
 //Get the current ID
 if(isset($_POST['id']))
 {
@@ -25,11 +29,10 @@ if(isset($_POST['id']))
 }
 
 $query = "SELECT *  FROM posts WHERE id = '" . $_SESSION['id'] . "'";
-$result = $mysqli->query($query);
+$result = $mySQL_connection->query($query);
 $data= $result->fetch_assoc();
 ?>
 <body>
-	<h1>Edit Post</h1>
 	<span id ='editPost'>
 		<form action = 'editPost.php' method='POST'>
 			<fieldset name><legend>Edit Post</legend>
