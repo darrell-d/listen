@@ -15,6 +15,7 @@ include('classes/Common.php');
 <script language = "javascript" type="text/javascript" src="scripts.js"></script>
 </head>
 <body>
+    <span id ="banner">Hello Friend! What you see before you is a work in progress...things might break or just look funny.</span>
 
 	<? printNav($_SERVER['PHP_SELF'])?>
 	

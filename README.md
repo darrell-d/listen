@@ -35,3 +35,7 @@ To run:
 *W3 validation for HTML5
 
 *Modularization
+
+*Post title needs to be in browser title
+
+*Summary and author info need to be included in HTML
