@@ -4,6 +4,7 @@ listen
 A simple blog plattform.
 
 To run:
+
 -Install your favorite webserver software
 
 -Install PHP 5.3+
@@ -19,12 +20,18 @@ To run:
 
 **TODO**
 
-*Delete post
-*Edit post
 *Future date post
+
+*Comment system
+
 *Delete / edit comment
+
 *Further secure php data checks
+
 *Implement alternate DBs
+
 *Social integration (reddit, tumbler, facebook, twitter)
-*W3 validate for HTML5
-*comment system 
+
+*W3 validation for HTML5
+
+*Modularization
