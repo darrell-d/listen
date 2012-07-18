@@ -40,9 +40,10 @@
 				tags:". $tags
 				."</span>
 				<span id = 'comments'>
-				<a href='#'>other noise</a>
+				<a href='javascript:loadComments(commentsPID". $id .")'>other noise</a>
 				</span>
 			</div>
+                        <div id = 'commentsPID". $id ."' style = 'display:none;'></div>
 		";
 	}
         function printHeader($title)

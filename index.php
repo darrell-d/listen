@@ -9,9 +9,10 @@ include('classes/Common.php');
 <!DOCTYPE html>
 <html>
 <head>
-
+    
 <? printHeader("darrelld - Index!"); ?>
 
+<script language = "javascript" type="text/javascript" src="scripts.js"></script>
 </head>
 <body>
 
