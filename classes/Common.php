@@ -27,7 +27,7 @@
 			<div id ='entry'>
 				<span id = 'title'><a href='eghm-blah.php?pid=". $id ."'>".
 				$title
-				."</a></span><span id ='author'> by ". $author ."</span><br>
+				."</a></span><span id ='author'> -- ". $author ."</span><br>
 				<span id = 'post'>
 				<p id = 'para'>
 				".

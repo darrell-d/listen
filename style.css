@@ -78,7 +78,7 @@ body
 	font-size:25px;
 	margin-bottom: 25px;
 	font-family:"Helvetica";
-	background:#999999;
+	background:#EED770;
 
 	box-shadow: 3px 3px 1px #888888;
 	-moz-border-radius: 5px;
@@ -119,7 +119,6 @@ body
 	font-family: "Arial";
 	font-weight:bold;
 	font-size:20px;
-	color:#336666;
 	margin-left: 20px;
 }
 #para
@@ -134,7 +133,7 @@ body
 #author
 {
 	font-size:20px;
-	color:#663333;
+	color:#25964F;
 }
 #comments
 {
@@ -147,7 +146,7 @@ body
 	text-transform:uppercase;
 	font-size: 20px;
 	font-family: "Helvetica";
-	color:#ffffff;
+	color:#BF4930;
 	font-weight:bold;
 }
 #tags
@@ -193,12 +192,12 @@ body
 	left:0;
 	bottom:0;
 	height:25px;
-	background:#336633;
+	background:#FF9680;
 	text-align:center;
 	font-size:10px;
 }
 #banner
-{       
+{
         color:white;
         padding: 20px;
     	position:fixed;
@@ -216,4 +215,8 @@ body
 	-moz-border-radius-bottomright: 50px;
 	border-bottom-left-radius: 50px;
 	border-bottom-right-radius: 50px;
+}
+#quote
+{
+    
 }

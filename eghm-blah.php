@@ -8,7 +8,7 @@ include('classes/Common.php');
 <? printHeader("darrelld - eghm-blah!");?>
 </head>
 <body>
-    <span id ="banner">Hello Friend! What you see before you is a work in progress...things might break or just look funny.</span>
+    <span id ="banner">Hello Friend! What you see before you is a work in progress...things might break or just look funny(including the color scheme).</span>
 	<span id ="navigation">
 		<? printNav($_SERVER['PHP_SELF'])?>
 	</span>
