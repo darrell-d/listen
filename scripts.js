@@ -1,11 +1,12 @@
 //Scripts.js
 
-loadComments(id)
+function loadComments(id)
 {
     comment = document.getElementById(id)
+    
     if(comment.style.display == 'block')
     {
-       comment.style.display == 'none'
+       comment.style.display = 'none'
     }
     else
     {

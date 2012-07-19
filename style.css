@@ -47,17 +47,18 @@ body
 #item
 {
 	margin-left:15%;
-	width:60%;
+	width:15%;
+        position:fixed;
 	top:2%;
-	padding: 5px;
+	padding: 25px;
 	font-size:25px;
 	margin-bottom: 25px;
 	font-family:"Helvetica";
-	background:#999999;
+	background:#72CCD4;
 
 	box-shadow: 3px 3px 1px #888888;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
 }
 #navigation
 {
@@ -201,7 +202,6 @@ body
         color:white;
         padding: 20px;
     	position:fixed;
-        display:block;
 	width: 21%;
         height:70px;
         right:0;
