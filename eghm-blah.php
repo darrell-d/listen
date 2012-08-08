@@ -29,7 +29,7 @@ include('classes/Common.php');
 				$result = $mySQL_connection->query($query);
 				$post = $result->fetch_assoc();
 				
-				printPosts($post['id'],$post['title'],$post['post'],$post['poster'],$post['date'],$post['tags']);
+				printPosts($post);
 				echo
 				"
 					<br>
@@ -49,7 +49,7 @@ include('classes/Common.php');
 			$result = $mySQL_connection->query($query);
 			while($row = $result->fetch_assoc() )
 			{
-				printPosts($row['id'],$row['title'],$row['post'],$row['poster'],$row['date'],$row['tags']);
+				printPosts($row);
 			}
 		}
 		

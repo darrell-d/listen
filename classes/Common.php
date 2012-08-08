@@ -8,8 +8,35 @@
 	$mySQL_connection = new MySQL($mysql_server,$mysql_user,$mysql_pass,$mysql_db);
         $_SESSION['mySQL_connection'] = $mySQL_connection;
 	//Print out posts
-	function printPosts($id,$title, $post,$author,$date,$tags)
+	function printPosts($post)
 	{
+		$id = $post['id'];
+		$title = $post['title'];
+		$postBody = $post['post'];
+		$author = $post['poster'];
+		$date = $post['date'];
+		$tags = $post['tags'];
+		if($post == null)
+		{
+			echo
+			"
+				<div id ='entry'>
+					<span id = 'title'> No Post!</span><span id ='author'> -- SYSTEM </span><br>
+					<span id = 'post'>
+					<p id = 'para'>
+					Nothing to see here as yet. Move on.
+					</p></span><br>
+					<span id ='date'> BEFORE TIME</span>
+					<span id ='tags'>
+					tags:None</span>
+					<span id = 'comments'>
+					<a href=''>.......</a>
+					</span>
+				</div>
+							<div id = 'commentsPID". $id ."' style = 'display:none;'></div>
+			";
+			return;
+		}
 		if($date!= "" && $date != null)
 		{
 			$date = date("j M y",$date);
@@ -31,7 +58,7 @@
 				<span id = 'post'>
 				<p id = 'para'>
 				".
-				$post
+				$postBody
 				."</p></span><br>
 				<span id ='date'>".
 				$date

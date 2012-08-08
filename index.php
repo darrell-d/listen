@@ -24,9 +24,10 @@ include('classes/Common.php');
 		$query = "SELECT * from posts ORDER BY id DESC LIMIT 1";
 		$result = $mySQL_connection->query($query);
 		$post = $result->fetch_assoc();
+		$rowCount =  $result->num_rows;
 		
 		
-		printPosts($post['id'],$post['title'], $post['post'],$post['poster'],$post['date'],$post['tags']);
+		printPosts($post);
 		
 	?>
 	
