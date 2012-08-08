@@ -1,10 +1,9 @@
 <?php
 include('classes/Common.php');
+
+printHeader("darrelld - Projects!");
+
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-<?php printHeader("darrelld - Projects!");?>
 </head>
 <body>
     <span id ="banner">Hello Friend! What you see before you is a work in progress...things might break or just look funny(including the color scheme).</span>

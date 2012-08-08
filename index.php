@@ -5,15 +5,8 @@ session_start();
 /*****End Dev Settings*****/
 include('classes/Common.php');
 
+printHeader("darrelld - Index!"); 
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    
-<?php printHeader("darrelld - Index!"); ?>
-
-<script language = "javascript" type="text/javascript" src="scripts.js"></script>
-</head>
 <body>
     <span id ="banner">Hello Friend! What you see before you is a work in progress...things might break or just look funny(including the color scheme).</span>
 

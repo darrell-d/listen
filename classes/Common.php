@@ -77,12 +77,18 @@
         {
             echo
             "
+				<!DOCTYPE html>
+				<html>
+				<head>
+					<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+					<script language = 'javascript' type='text/javascript' src='scripts.js'></script>
                     <link rel='stylesheet' type='text/css' href='style.css' />
                     <title>". $title ."</title>
                     <meta name ='description' content = '". $description."'>
                     <meta name ='keywords' content = '".  $keywords."'>
                     <meta name ='author' content = '".  $author."'>
                     <meta charset = '".  $charset."'> 
+				</head>
             ";
         }
 	

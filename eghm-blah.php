@@ -1,12 +1,10 @@
 <?php 
 session_start(); 
 include('classes/Common.php');
- ?>
-<!DOCTYPE html>
-<html>
-<head>
-<?php printHeader("darrelld - eghm-blah!");?>
-</head>
+ 
+printHeader("darrelld - eghm-blah!");
+?>
+
 <body>
     <span id ="banner">Hello Friend! What you see before you is a work in progress...things might break or just look funny(including the color scheme).</span>
 	<span id ="navigation">
