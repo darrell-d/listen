@@ -4,12 +4,12 @@ include('classes/Common.php');
 <!DOCTYPE html>
 <html>
 <head>
-<? printHeader("darrelld - Projects!");?>
+<?php printHeader("darrelld - Projects!");?>
 </head>
 <body>
     <span id ="banner">Hello Friend! What you see before you is a work in progress...things might break or just look funny(including the color scheme).</span>
 	<span id ="navigation">
-		<? printNav($_SERVER['PHP_SELF'])?>
+		<?php printNav($_SERVER['PHP_SELF'])?>
 	</span>
 	<span id = "item">
             <a href="https://github.com/darrell-d/listen">listen!</a><br>
@@ -21,7 +21,7 @@ include('classes/Common.php');
                 <br>Be heard.
 	</span>
 	
-	<?
+	<?php
 		include('footer.php');
 	?>
 	

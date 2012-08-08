@@ -1,4 +1,4 @@
-<?
+<?php
 /*
 *Administrative login
 *By: Darrell De Freitas 02/01/2012
@@ -28,7 +28,7 @@ if($_SESSION['priv'] != "Owner")
 	</form>
 </body>
 </html>
-<?
+<?php
 }
 else
 {

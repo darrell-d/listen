@@ -18,6 +18,7 @@ class MySQL
 		$this->db_name = $dbName;
 		$this->db_mysqli = new mysqli($this->db_server,$this->db_user,$this->db_pass,$this->db_name) or die($db_mysqli->error);
 	}
+	
 	function query($query)
 	{
 		$result =  $this->db_mysqli->query($query)or die ($this->db_mysqli->error);

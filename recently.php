@@ -1,4 +1,4 @@
-<?
+<?php
 
 $query = "SELECT id,title from posts ORDER BY id DESC";
 
