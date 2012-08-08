@@ -63,8 +63,17 @@
 	function printNav($pageName)
 	{
 		global $mySQL_connection;
-		$pageName = trim(str_replace("/","",$pageName));
 		
+		$fileName = explode("/", $pageName);
+		$arrCount = count($fileName);
+		if($arrCount < 2)
+		{
+			$fileName = explode("\\", $pageName);
+			$arrCount = count($fileName);
+		}
+		
+		
+		$pageName = $fileName[$arrCount - 1];
 		if(strcmp($pageName,"index.php") == 0 )
 		{
 			echo "

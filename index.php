@@ -17,8 +17,7 @@ include('classes/Common.php');
 <body>
     <span id ="banner">Hello Friend! What you see before you is a work in progress...things might break or just look funny(including the color scheme).</span>
 
-	<?php printNav($_SERVER['PHP_SELF'])?>
-	
+	<?php printNav($_SERVER['PHP_SELF']);?>
 	
 	<?php
 		//Display the latest post
