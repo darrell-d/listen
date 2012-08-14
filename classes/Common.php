@@ -75,6 +75,7 @@
 	}
         function printHeader($title)
         {
+		global $description,$keywords,$author,$charset;
             echo
             "
 				<!DOCTYPE html>
