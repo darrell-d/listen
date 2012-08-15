@@ -58,7 +58,7 @@
 				<span id = 'post'>
 				<p id = 'para'>
 				".
-				$postBody
+				nl2br($postBody)
 				."</p></span><br>
 				<span id ='date'>".
 				$date

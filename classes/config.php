@@ -2,7 +2,7 @@
 //MySQL connection info
 
 $mysql_user = "root";
-$mysql_pass = "@yd5tUnd3rstand+1";
+$mysql_pass = "understand";
 $mysql_server = "localhost";
 $mysql_db = "blog";
 

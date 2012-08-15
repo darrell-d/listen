@@ -34,6 +34,12 @@ fieldset legend
 	size: 50px;
 	padding: 5px;
 }
+@font-face
+{
+font-family: Monaco;
+src: url('Monaco.tff');
+}
+
 body
 {
 	font-family:"Helvetica";
@@ -157,11 +163,12 @@ body
 }
 #prev
 {
-	float:left;
+        margin-left:15%;
+        padding-right: 50%;
 }
 #next
 {
-	float:right;
+        //float:left;
 }
 #deletePost
 {
@@ -216,7 +223,32 @@ body
 	border-bottom-left-radius: 50px;
 	border-bottom-right-radius: 50px;
 }
-#quote
+blockquote
+{
+    background:
+        url('.\\images\\quotes.png') left top no-repeat ,
+        url('.\\images\\setouq.png') right bottom no-repeat;
+    padding-top: 30px;
+    padding-left: 30px;
+    
+    padding-bottom: 30px;
+
+    background-repeat: no-repeat;
+    font-family: 'Mono';
+    font-size: 20px;
+}
+blockquote.code
 {
     
+    background:
+        url('.\\images\\brackets.png') left top no-repeat ,
+        url('.\\images\\stekcarb.png') right bottom no-repeat;
+    padding-top: 30px;
+    padding-left: 30px;
+    
+    padding-bottom: 30px;
+
+    background-repeat: no-repeat;
+    font-family: Monaco;
+    font-size: 18px;
 }
