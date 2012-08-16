@@ -67,10 +67,15 @@
 				tags:". $tags
 				."</span>
 				<span id = 'comments'>
-				<a href='javascript:loadComments(\"commentsPID". $id ."\")'>other noise</a>
+				<a href ='#' id = 'loadComments'>other noise</a>
 				</span>
 			</div>
-                        <div id = 'commentsPID". $id ."' style = 'display:none;'></div>
+                        <div id = 'commentsPID'>
+                            <input type = 'text' placeholder = 'Name'>
+                            <br />
+                            <textarea placeholder = 'Your comment' rows = '10' cols = '50'></textarea><br>
+                            <input type = 'submit' value = 'submit'>
+                        </div>
 		";
 	}
         function printHeader($title)
@@ -89,6 +94,22 @@
                     <meta name ='keywords' content = '".  $keywords."'>
                     <meta name ='author' content = '".  $author."'>
                     <meta charset = '".  $charset."'> 
+                        <script type = 'text/javascript'>
+                            $(document).ready
+                            (   
+                                function()
+                                {
+                                    $('#commentsPID').hide();
+                                        $('#loadComments').click
+                                        (
+                                           function()
+                                            {
+                                                $('#commentsPID').slideToggle(); 
+                                            }
+                                        );
+                                }
+                            );
+                        </script>
 				</head>
             ";
         }
