@@ -16,6 +16,16 @@
 		$author = $post['poster'];
 		$date = $post['date'];
 		$tags = $post['tags'];
+		
+		$commentsDiv = 
+		"
+		<div id = '#' class = 'comments'>
+			<input type = 'text' placeholder = 'Name'>
+			<br />
+			<textarea placeholder = 'Your comment' rows = '10' cols = '50'></textarea><br>
+			<input type = 'submit' value = 'submit'>
+		</div>
+		";
 		if($post == null)
 		{
 			echo
@@ -33,8 +43,7 @@
 					<a href=''>.......</a>
 					</span>
 				</div>
-							<div id = 'commentsPID". $id ."' style = 'display:none;'></div>
-			";
+			" . addComments($commentsDiv,$id);
 			return;
 		}
 		if($date!= "" && $date != null)
@@ -67,16 +76,10 @@
 				tags:". $tags
 				."</span>
 				<span id = 'comments'>
-				<a href ='#' id = 'loadComments'>other noise</a>
+				<a href ='javascript:comments(". $id .")' id = 'loadComments'>other noise</a>
 				</span>
 			</div>
-                        <div id = 'commentsPID'>
-                            <input type = 'text' placeholder = 'Name'>
-                            <br />
-                            <textarea placeholder = 'Your comment' rows = '10' cols = '50'></textarea><br>
-                            <input type = 'submit' value = 'submit'>
-                        </div>
-		";
+			" . addComments($commentsDiv,$id);
 	}
         function printHeader($title)
         {
@@ -87,7 +90,7 @@
 				<html>
 				<head>
 					<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
-					<script language = 'javascript' type='text/javascript' src='scripts.js'></script>
+					<script src='scripts.js'></script>
                     <link rel='stylesheet' type='text/css' href='style.css' />
                     <title>". $title ."</title>
                     <meta name ='description' content = '". $description."'>
@@ -99,15 +102,9 @@
                             (   
                                 function()
                                 {
-                                    $('#commentsPID').hide();
-                                        $('#loadComments').click
-                                        (
-                                           function()
-                                            {
-                                                $('#commentsPID').slideToggle(); 
-                                            }
-                                        );
+                                    $('.comments').hide();
                                 }
+
                             );
                         </script>
 				</head>
@@ -177,5 +174,10 @@
 				</table>
 				";
 		}
+	}
+	function addcomments($html, $id)
+	{
+		$html = str_replace("#",$id,$html);
+		return $html;
 	}
 ?>
