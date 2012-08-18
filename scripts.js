@@ -2,5 +2,14 @@
 
 function comments(id)
 {
-	$("#" + id).slideToggle();
+        if( $('[id='+ id +']').is(':visible') )
+        {
+            $("#" + id).slideToggle();
+        }
+        else
+        {
+            $(".comments:visible").slideToggle();
+            $("#" + id).slideToggle();
+        }
+        
 }
