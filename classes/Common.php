@@ -22,7 +22,7 @@
 		<div id = '#' class = 'comments'>
 			<input type = 'text' placeholder = 'Name' id = 'commenterName'>
 			<br />
-			<textarea placeholder = 'Your comment' rows = '10' cols = '50' id = 'userComment'></textarea><br>
+			<textarea placeholder = 'Comments...' rows = '10' cols = '50' id = 'userComment'></textarea><br>
 			<input type = 'submit' value = 'submit'>
 		</div>
 		";
@@ -114,8 +114,8 @@
                                                 {
                                                 type:'POST',
                                                 url:'./classes/Comments.php',
-                                                data:'name='+ $(\"#commenterName\").val() +'&comment='+ $(\"#userComment\").val() +'&id='+ $('.comments:visible').attr('id'),
-                                                success: function(text)
+                                                data:'name='+ $(\"[placeholder=Name]:visible\").val() +'&comment='+ $(\"textarea:visible\").val() +'&id='+ $('.comments:visible').attr('id'),
+                                                success: function(text) 
                                                 {
                                                     console.log(text);
                                                 }
