@@ -1,4 +1,5 @@
 <?php
+//TODO: take into consideration subfolders when making url references
     session_start();
     
 	include("config.php"); // Configuration files
@@ -20,10 +21,14 @@
 		$commentsDiv = 
 		"
 		<div id = '#' class = 'comments'>
-			<input type = 'text' placeholder = 'Name' id = 'commenterName'>
-			<br />
-			<textarea placeholder = 'Comments...' rows = '10' cols = '50' id = 'userComment'></textarea><br>
-			<input type = 'submit' value = 'submit'>
+                    <div id = 'commentError'>There was an error submitting the comment</div>
+                            <input type = 'text' placeholder = 'Name' id = 'commenterName'>
+                            <br />
+                            <textarea placeholder = 'Comments...' rows = '10' cols = '50' id = 'userComment'></textarea><br>
+                            <input type = 'submit' value = 'submit'>
+                    <div id = 'allComments'>
+                        
+                    </div>
 		</div>
 		";
 		if($post == null)
@@ -98,34 +103,7 @@
                     <meta name ='author' content = '".  $author."'>
                     <meta charset = '".  $charset."'> 
                         <script type = 'text/javascript'>
-                            $(document).ready
-                            (   
-                                function()
-                                {
-                                    $('.comments').hide();
-                                    $('[type=submit]').click
-                                    (
-                                        function()
-                                        {
-                                            //submit comment
-                                            //TODO: prevent duplicate submission
-                                            $.ajax
-                                            (
-                                                {
-                                                type:'POST',
-                                                url:'./classes/Comments.php',
-                                                data:'name='+ $(\"[placeholder=Name]:visible\").val() +'&comment='+ $(\"textarea:visible\").val() +'&id='+ $('.comments:visible').attr('id'),
-                                                success: function(text) 
-                                                {
-                                                    console.log(text);
-                                                }
-                                                }
-                                            )
-                                        }
-                                    );
-                                }
-
-                            );
+                            makeReady();
                         </script>
 				</head>
             ";

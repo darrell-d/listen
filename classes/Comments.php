@@ -21,9 +21,19 @@ class Comments
         
     }
     
-    function loadChildren()
+    function loadComments($id)
     {
-        //Linked list of children
+        global $mysql_user,$mysql_pass,$mysql_server,$mysql_db;
+        $mysql = new MySQL($mysql_server,$mysql_user,$mysql_pass,$mysql_db);
+        $query = "SELECT name, comment, time FROM `comments` WHERE postID ='". $id ."' ORDER BY time DESC";
+        
+        $result = $mysql->query($query);
+        $comments = array();
+        while($data = $result->fetch_assoc() )
+        {
+            array_push($comments,$data);
+        }
+        return $comments;
     }
     
     function deleteComment()
@@ -33,10 +43,5 @@ class Comments
     
     
 }
-//TODO: clean data
-$name = $_POST['name'];
-$comment = $_POST['comment'];
-$id = $_POST['id'];
 
-$comments =  Comments::saveComment($id,$name,$comment, time());
 ?>

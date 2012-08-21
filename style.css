@@ -257,3 +257,9 @@ blockquote.code
 {
         margin-left:15%;
 }
+#commentError
+{
+     width: 18%;
+     font-size:15px;
+     background: #ff4444;
+}

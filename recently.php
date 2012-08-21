@@ -1,7 +1,7 @@
 <?php
 
 $query = "SELECT id,title from posts ORDER BY id DESC";
-
+echo "!!!!";
 $result = $mySQL_connection->query($query);
 $recentCount = $result->num_rows;
 
