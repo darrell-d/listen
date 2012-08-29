@@ -25,6 +25,10 @@ class MySQL
 		return $result;
 		
 	}
+        function error()
+        {
+            return $this->db_mysqli->error;
+        }
 }
 
 
