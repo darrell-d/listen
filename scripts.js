@@ -62,6 +62,8 @@ $(document).ready
                                     success: function(text) 
                                     {
                                         $("#allComments").html( text );
+                                        $('[placeholder="Comments..."]').val("");
+                                        $('[placeholder="Name"]').val("");
                                     },
                                     error: function()
                                     {
@@ -69,6 +71,7 @@ $(document).ready
                                     }
                                 }
                             );
+                            
                         },
                         error: function()
                         {
