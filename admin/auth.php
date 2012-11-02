@@ -1,5 +1,6 @@
-<?
+<?php
 include('../classes/Common.php');
+global $mySQL_connection;
 
 if(!isset($_POST['submit']))
 {
@@ -15,9 +16,15 @@ else
 	$pass = $_POST['password'];
 	//Search for user
 	//Assumes unique user names. Gauruantee in sign up process.
-	$query = "SELECT pass, type FROM authentic_users WHERE `user` ='" . $user . "'";
-	$result = $mySQL_connection->query($query);
-	$rowData = $result->fetch_assoc();
+	//$query = "SELECT pass, type FROM authentic_users WHERE `user` ='" . $user . "'";
+        $query = $mySQL_connection->prepare("SELECT pass, type FROM authentic_users WHERE `user` = ?");
+	//$result = $mySQL_connection->query($query);
+        $query->bind_param('s',$user);
+        $query->execute();
+        $query->bind_result($pass,$type);
+        $query->fetch();
+        var_dump($pass);
+	$rowData = $result;
 	
 	
 	if(md5($pass) == $rowData["pass"])

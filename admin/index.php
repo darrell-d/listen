@@ -4,7 +4,7 @@
 *By: Darrell De Freitas 02/01/2012
 */
 session_start();
-if($_SESSION['priv'] != "Owner")
+if(!isset($_SESSION['priv']))
 {
 ?>
 <!DOCTYPE html>

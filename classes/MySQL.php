@@ -21,10 +21,19 @@ class MySQL
 	
 	function query($query)
 	{
-		$result =  $this->db_mysqli->query($query)or die ($this->db_mysqli->error);
-		return $result;
+            $query = $mysqli->prepare($query);
+            $query->bind_param('s',$VARIABLE);
+            $query->execute();
+            $query->bind_result($VARIABLE_LIST_MATCHING_COLUMN_LIST);
+            $query->fetch();
+            $result =  $this->db_mysqli->query($query)or die ($this->db_mysqli->error);
+            return $result;
 		
 	}
+        function prepare($query)
+        {
+            return $this->db_mysqli->prepare($query);
+        }
         function error()
         {
             return $this->db_mysqli->error;
