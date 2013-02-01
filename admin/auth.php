@@ -21,15 +21,13 @@ else
 	//$result = $mySQL_connection->query($query);
         $query->bind_param('s',$user);
         $query->execute();
-        $query->bind_result($pass,$type);
+        $query->bind_result($dbPass,$type);
         $query->fetch();
-        var_dump($pass);
-	$rowData = $result;
 	
 	
-	if(md5($pass) == $rowData["pass"])
+	if(md5($pass) == $dbPass)
 	{
-		$_SESSION['priv'] = $rowData["type"];
+		$_SESSION['priv'] = $type;
 		$_SESSION['user'] = $user;
 		header('Location: adminPanel.php');
 	}
