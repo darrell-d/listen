@@ -21,7 +21,7 @@ class Comments
         
     }
     
-    function loadComments($id)
+    public static function loadComments($id)
     {
         global $mysql_user,$mysql_pass,$mysql_server,$mysql_db;
         $mysql = new MySQL($mysql_server,$mysql_user,$mysql_pass,$mysql_db);
@@ -36,7 +36,7 @@ class Comments
         return $comments;
     }
     
-    function deleteComment()
+    public static function deleteComment()
     {
         $query = "DELETE FROM `comments` WHERE `id` ='". $this->id ."'";
     }
