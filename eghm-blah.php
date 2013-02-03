@@ -52,8 +52,5 @@ printHeader("darrelld - eghm-blah!");
 		
 
 	?>
-	<?php
-		include('footer.php');
-	?>
 </body>
 </html>
