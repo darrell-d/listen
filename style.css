@@ -89,26 +89,30 @@ body
 #navigation
 {
 	position:fixed;
-	width:15%;
+	width:10%;
 	letter-spacing:0px;
 	top:2%;
 	font-family: Arial;
 	font-size:16px;
 }
-#entry
+#entry,.project
 {
-	margin-left:15%;
-	width:60%;
+	margin-left:10%;
+	width:87%;
 	top:2%;
 	padding: 5px;
 	font-size:25px;
 	margin-bottom: 25px;
 	font-family:Monaco, Helvetica;
-	background:#EED770;
+	background:#ededed;
 
 	box-shadow: 3px 3px 1px #888888;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
+}
+.project
+{
+    background:#EED770;
 }
 #admin_area
 {
