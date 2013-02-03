@@ -6,7 +6,6 @@ printHeader("darrelld - eghm-blah!");
 ?>
 
 <body>
-    <span id ="banner">Hello Friend! What you see before you is a work in progress...things might break or just look funny(including the color scheme).</span>
 	<span id ="navigation">
 		<?php printNav($_SERVER['PHP_SELF'])?>
 	</span>

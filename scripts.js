@@ -37,7 +37,7 @@ $(document).ready
     function()
     {
         $('.comments').hide();
-        $('#commentError').hide();
+        $('[id=commentError]').hide();
         $('[type=submit]').click
         (
             function()

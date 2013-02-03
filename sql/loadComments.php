@@ -6,6 +6,11 @@ $id = $_POST['id'];
 $comments =  Comments::loadComments($id);
 foreach($comments as $c)
 {
-    echo "<i> " . $c['name'] . "</i>:  <br>" . $c['comment'] . " <br>   on " . date("jS F  Y",$c[time]) . "<p>--<p>";
+    echo
+    "
+        <span class = 'commenterName'>$c[name]</span> said:
+        <div class = 'userComment'>$c[comment]</div>
+        <div class ='commentDate'>". date('d F Y \a\t g:i',$c['time']) ."</div>
+    ";
 }
 ?>
