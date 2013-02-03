@@ -26,9 +26,5 @@ printHeader("darrelld - Projects!");
 		
 	?>
 	
-	<?php
-		include('footer.php');
-	?>
-	
 </body>
 </html>
