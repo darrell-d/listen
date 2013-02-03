@@ -9,15 +9,22 @@ printHeader("darrelld - Projects!");
 	<span id ="navigation">
 		<?php printNav($_SERVER['PHP_SELF'])?>
 	</span>
-	<span id = "item">
-            <a href="https://github.com/darrell-d/listen">listen!</a><br>
-                You want to speak. 
-                <br>You have words that need to be heard. 
-                <br>You need people to listen.
-                
-                <br><br><em>listen</em> lets you do that. 
-                <br>Be heard.
-	</span>
+	<?php 
+        printProjects(
+                        array(
+                            "id" => "N/A",
+                            "url" => "https://github.com/darrell-d/listen",
+                            "post" => "
+                                You want to speak. You have words that need to be heard. You need people to listen. 
+                                listen! lets you do that. 
+                                Be heard.",
+                            "title" => "listen!",
+                            "poster" => "darrelld",
+                            "date" => "1341980998",
+                            "tags" => "project"
+                            ))
+		
+	?>
 	
 	<?php
 		include('footer.php');

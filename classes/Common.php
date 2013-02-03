@@ -5,6 +5,37 @@
     global $mySQL_connection;
     $mySQL_connection = new MySQL($mysql_server,$mysql_user,$mysql_pass,$mysql_db);
     $_SESSION['mySQL_connection'] = $mySQL_connection;
+    
+    //Print projects
+function printProjects($project)
+    {
+            $title = $project['title'];
+            $url = $project['url'];
+            $postBody = $project['post'];
+            $author = $project['poster'];
+            $date = date("d M y",$project['date']);
+            $tags = $project['tags'];
+
+            echo
+            "
+                    <div class ='project'>
+                            <span id = 'title'><a href='$url'>".
+                            $title
+                            ."</a></span><span id ='author'> -- ". $author ."</span><br>
+                            <span id = 'post'>
+                            <p id = 'para'>
+                            ".
+                            nl2br($postBody)
+                            ."</p></span><br>
+                            <span id ='date'>".
+                            $date
+                            ."</span>
+                            <span id ='tags'>
+                            tags:". $tags
+                            ."</span>
+                    </div>
+                    ";
+    }
     //Print out posts
     function printPosts($post)
     {
