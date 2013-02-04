@@ -1,6 +1,7 @@
 <?php
     include(__dir__ . "/../config.php"); // Configuration files
     include("MySQL.php"); //SQL connection
+    include('markdown.php');
 
     global $mySQL_connection;
     $mySQL_connection = new MySQL($mysql_server,$mysql_user,$mysql_pass,$mysql_db);
@@ -25,7 +26,7 @@ function printProjects($project)
                             <span id = 'post'>
                             <p id = 'para'>
                             ".
-                            nl2br($postBody)
+                            Markdown($postBody)
                             ."</p></span><br>
                             <span id ='date'>".
                             $date
@@ -100,7 +101,7 @@ function printProjects($project)
                             <span id = 'post'>
                             <p id = 'para'>
                             ".
-                            nl2br($postBody)
+                            Markdown($postBody)
                             ."</p></span><br>
                             <span id ='date'>".
                             $date
