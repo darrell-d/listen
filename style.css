@@ -27,18 +27,26 @@ a:active
 	text-decoration: none;
 	color:#ff6677;
 }
+blockquote
+{
+    display: block;
+    background:
+        url('.\\images\\quotes.png') left top no-repeat;
+    border-left: 3px solid #ccc;
+    padding:10px;
+    text-indent: 23px;
+    white-space: pre;
+    
+    background-repeat: no-repeat;
+    font-family: 'Mono';
+    font-size: 20px;
+}
 blockquote.code
 {
     
     background:
         url('.\\images\\brackets.png') left top no-repeat ,
         url('.\\images\\stekcarb.png') right bottom no-repeat;
-    padding-top: 30px;
-    padding-left: 30px;
-    
-    padding-bottom: 30px;
-
-    background-repeat: no-repeat;
     font-family: Monaco;
     font-size: 18px;
 }
@@ -64,6 +72,10 @@ body
 {
 	font-family:Monaco;
 	font-size:25px;
+}
+h1,h2,h3,h4,h5,h6
+{
+    font-family: Arial;
 }
 
 #sidebar-posts
@@ -103,7 +115,7 @@ body
 	padding: 5px;
 	font-size:25px;
 	margin-bottom: 25px;
-	font-family:Monaco, Helvetica;
+	font-family:Arial, Helvetica;
 	background:#ededed;
 
 	box-shadow: 3px 3px 1px #888888;
@@ -194,7 +206,7 @@ body
 }
 #next
 {
-        //float:left;
+        /*float:left;*/
 }
 #deletePost
 {
@@ -255,21 +267,6 @@ body
      font-size:15px;
      background: #ff4444;
 }
-blockquote
-{
-    background:
-        url('.\\images\\quotes.png') left top no-repeat ,
-        url('.\\images\\setouq.png') right bottom no-repeat;
-    padding-top: 30px;
-    padding-left: 30px;
-    
-    padding-bottom: 30px;
-
-    background-repeat: no-repeat;
-    font-family: 'Mono';
-    font-size: 20px;
-}
-
 .comments
 {
         margin-left:15%;

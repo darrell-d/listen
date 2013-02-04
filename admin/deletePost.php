@@ -33,7 +33,16 @@ $data= $result->fetch_assoc();
 	<span id ="delConf">
 	Are you sure you want to delete this post below? (No take backs)
         </span>
-	<?php printPosts($_SESSION['id'],$data['title'], $data['post'],$data['poster'],$data['date'],$data['tags']); ?>
+	<?php printPosts(
+                array(
+                    "id"=>$_SESSION['id'],
+                    "title"=>$data['title'],
+                    "post"=>$data['post'],
+                    "poster"=>$data['poster'],
+                    "date"=>$data['date'],
+                    "tags"=>$data['tags']
+                    )
+                ) ; ?>
 	<form action ='deletePost.php' method ='POST'>
             <center>
 		<input type ='submit' name ='YES' value = 'YES'>

@@ -19,12 +19,16 @@ $date = strtotime("now");
 $query = $mySQL_connection->prepare("INSERT INTO posts (title,post, date, poster) VALUES (?,?,?,?)");
 
 $query->bind_param('ssss',$title,$post,$date,$_SESSION['user']);
-$query->execute();
-$query->bind_result($result);
-$query->fetch();
+$result = $query->execute();
 
-echo $result;
-die();
+if($result ==1)
+{
+    $result = 'Post successful';
+}
+else
+{
+    $result = 'Error int posting';
+}
 /*
 if ($mySQL_connection->query($query))
 {
@@ -37,5 +41,5 @@ else
 ?>
  
 <script type="text/javascript">
-    window.location = "adminPanel.php?result=<? echo $result;?>"
+    window.location = "adminPanel.php?result=<?php echo $result;?>"
 </script>

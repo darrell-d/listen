@@ -22,7 +22,7 @@ if($_SESSION['priv'] != "Owner")
 <body onload = 'loadPanel("new.php")'>
 	<h1>Welcome admin!</h1>
         <span id = "notification">
-            <?
+            <?php
                 if(isset($_GET['result']))
                 {
                     //TODO: Write clean function for $_GET and $_POST data
