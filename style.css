@@ -79,7 +79,13 @@ h1,h2,h3,h4,h5,h6
 {
     font-family: Arial;
 }
-
+.navHR
+{
+    width: 50%;
+    border: 2px;
+    margin-left: 0%;
+    border-style:dashed;
+}
 #sidebar-posts
 {
     font-size:20px;
@@ -136,9 +142,8 @@ h1,h2,h3,h4,h5,h6
 }
 .recent
 {
-    letter-spacing:5px;
     font-weight: bolder;
-    font-family: Arial;
+    font-family: Helvetica;
     color:#110011;
     height: 32px;
 }

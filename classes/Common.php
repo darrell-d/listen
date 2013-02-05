@@ -161,7 +161,7 @@ function printProjects($project)
                             <table id = 'navigation'>
                                     <tr><td><b>Home<b></td></tr>
                                     <tr><td><a href = 'projects.php'>Projects</a></td></tr>
-                                    <tr><td></td></tr>
+                                    <tr><td><hr class = 'navHR'></td></tr>
                                     <tr ><td><span class= 'recent'><a href = 'eghm-blah.php'>Recently</a></span></td></tr>";
                                     include('recently.php');
                     echo "
@@ -173,10 +173,10 @@ function printProjects($project)
             else if(strcmp($pageName,"projects.php") == 0 )
             {
                     echo "
-                            <table>
+                            <table id = 'navigation'>
                                     <tr><td><a href='index.php'>Home</a></td></tr>
                                     <tr><td><b>Projects</b></td></tr>
-                                    <tr></tr>
+                                    <tr><td><hr class = 'navHR'></td></tr>
                                     <tr ><td><span class= 'recent'><a href = 'eghm-blah.php'>Recently</a></span></td></tr>";
                                     include('recently.php');
                     echo "
@@ -188,12 +188,11 @@ function printProjects($project)
             else if(strcmp($pageName,"eghm-blah.php") == 0 )
             {
                     echo "
-                            <table>
+                            <table id = 'navigation'>
                                     <tr><td><a href='index.php'>Home</a></td></tr>
                                     <tr><td><a href = 'projects.php'>Projects</a></td></tr>
-                                    <tr><td><b>Prevous Posts<b></td></tr>
-                                    <tr></tr>
-                                    <tr id= 'recent'><td>Recently</td></tr>";
+                                    <tr><td><hr class = 'navHR'></td></tr>
+                                    <tr id= 'recent'><td><b>Recently</b></td></tr>";
                                     include('recently.php');
                     echo "
                                     <tr id= 'sidebar-posts'>
