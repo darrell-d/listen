@@ -1,5 +1,5 @@
 <?php
-    include(__dir__ .' \..\classes\Comments.php');
+    include(__dir__ .' /../classes/Comments.php');
     //TODO: clean data
     $name = $_POST['name'];
     $comment = $_POST['comment'];
