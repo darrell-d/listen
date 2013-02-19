@@ -20,20 +20,20 @@ function printProjects($project)
             echo
             "
                     <div class ='project'>
-                            <span id = 'title'><a href='$url'>".
+                            <div id = 'title'><a href='$url'>".
                             $title
-                            ."</a></span><span id ='author'> -- ". $author ."</span><br>
-                            <span id = 'post'>
-                            <p id = 'para'>
+                            ."</a></div><div id ='author'> -- ". $author ."</div><br>
+                            <div id = 'post'>
+                            <div id = 'para'>
                             ".
                             Markdown($postBody)
-                            ."</p></span><br>
-                            <span id ='date'>".
+                            ."</div></div><br>
+                            <div id ='date'>".
                             $date
-                            ."</span>
-                            <span id ='tags'>
+                            ."</div>
+                            <div id ='tags'>
                             tags:". $tags
-                            ."</span>
+                            ."</div>
                     </div>
                     ";
     }
@@ -65,17 +65,17 @@ function printProjects($project)
                     echo
                     "
                             <div id ='entry'>
-                                    <span id = 'title'> No Post!</span><span id ='author'> -- SYSTEM </span><br>
-                                    <span id = 'post'>
-                                    <p id = 'para'>
+                                    <div id = 'title'> No Post!</div><div id ='author'> -- SYSTEM </div><br>
+                                    <div id = 'post'>
+                                    <div id = 'para'>
                                     Nothing to see here as yet. Move on.
-                                    </p></span><br>
-                                    <span id ='date'> BEFORE TIME</span>
-                                    <span id ='tags'>
-                                    tags:None</span>
-                                    <span id = 'comments'>
+                                    </div></div><br>
+                                    <div id ='date'> BEFORE TIME</div>
+                                    <div id ='tags'>
+                                    tags:None</div>
+                                    <div id = 'comments'>
                                     <a href=''>.......</a>
-                                    </span>
+                                    </div>
                             </div>
                     " . addComments($commentsDiv,$id);
                     return;
@@ -95,23 +95,23 @@ function printProjects($project)
             echo
             "
                     <div id ='entry'>
-                            <span id = 'title'><a href='eghm-blah.php?pid=". $id ."'>".
+                            <div id = 'title'><a href='eghm-blah.php?pid=". $id ."'>".
                             $title
-                            ."</a></span><span id ='author'> -- ". $author ."</span><br>
-                            <span id = 'post'>
-                            <p id = 'para'>
+                            ."</a></div><div id ='author'> -- ". $author ."</div><br>
+                            <div id = 'post'>
+                            <div id = 'para'>
                             ".
                             Markdown($postBody)
-                            ."</p></span><br>
-                            <span id ='date'>".
+                            ."</div></div><br>
+                            <div id ='date'>".
                             $date
-                            ."</span>
-                            <span id ='tags'>
+                            ."</div>
+                            <div id ='tags'>
                             tags:". $tags
-                            ."</span>
-                            <span id = 'comments'>
+                            ."</div>
+                            <div id = 'comments'>
                             <a href ='javascript:comments(". $id .")' class = 'loadComments'>other noise</a>
-                            </span>
+                            </div>
                     </div>
                     " . addComments($commentsDiv,$id);
     }
@@ -123,6 +123,7 @@ function printProjects($project)
         <!DOCTYPE html>
         <html>
         <head>
+            <meta charset = '".  $charset."'> 
             <script src='//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
             <script src='scripts.js'></script>
             <script src='bootstrap/js/bootstrap.min.js'></script>";
@@ -135,7 +136,6 @@ function printProjects($project)
             <meta name ='description' content = '". $description."'>
             <meta name ='keywords' content = '".  $keywords."'>
             <meta name ='author' content = '".  $author."'>
-            <meta charset = '".  $charset."'> 
             <script type = 'text/javascript'>
             makeReady();
             </script>
@@ -162,13 +162,14 @@ function printProjects($project)
             {
                     echo "
                             <table id = 'navigation'>
-                                    <tr><td><b>Home<b></td></tr>
+                                    <tr><td><b>Home</b></td></tr>
                                     <tr><td><a href = 'projects.php'>Projects</a></td></tr>
                                     <tr><td><hr class = 'navHR'></td></tr>
-                                    <tr ><td><span class= 'recent'><a href = 'eghm-blah.php'>Recently</a></span></td></tr>";
+                                    <tr ><td><div class= 'recent'><a href = 'eghm-blah.php'>Recently</a></div></td></tr>";
                                     include('recently.php');
                     echo "
                                     <tr id= 'sidebar-posts'>
+					<td></td>
                                     </tr>
                             </table>
                             ";
@@ -180,7 +181,7 @@ function printProjects($project)
                                     <tr><td><a href='index.php'>Home</a></td></tr>
                                     <tr><td><b>Projects</b></td></tr>
                                     <tr><td><hr class = 'navHR'></td></tr>
-                                    <tr ><td><span class= 'recent'><a href = 'eghm-blah.php'>Recently</a></span></td></tr>";
+                                    <tr ><td><div class= 'recent'><a href = 'eghm-blah.php'>Recently</a></div></td></tr>";
                                     include('recently.php');
                     echo "
                                     <tr id= 'sidebar-posts'>

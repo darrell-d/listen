@@ -10,7 +10,7 @@ if(0 < $recentCount)
 	{
 		echo
 		"
-			<tr id = 'recentTitles'>
+			<tr class = 'recentTitles'>
 				<td><a href='eghm-blah.php?pid=". $row['id'] ."'>". $row['title'] ."</a></td>
 			</tr>
 		";

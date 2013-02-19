@@ -106,6 +106,10 @@ h1,h2,h3,h4,h5,h6
     -moz-border-radius: 50px;
     border-radius: 50px;
 }
+#title,#author
+{
+    display:inline;
+}
 #navigation
 {
     position:fixed;
@@ -147,7 +151,7 @@ h1,h2,h3,h4,h5,h6
     color:#110011;
     height: 32px;
 }
-#recentTitles
+.recentTitles
 {
     font-family: Arial;
     font-size: 15px;
