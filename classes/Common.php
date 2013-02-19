@@ -125,7 +125,10 @@ function printProjects($project)
         <head>
             <script src='//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
             <script src='scripts.js'></script>
-            <script src='bootstrap/js/bootstrap.min.js'></script>
+            <script src='bootstrap/js/bootstrap.min.js'></script>";
+
+    	    include_once(__dir__ . "/../analyticstracking.php");
+	echo"
 
             <link rel='stylesheet' type='text/css' href='style.css' />
             <title>". $title ."</title>
