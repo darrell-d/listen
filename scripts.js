@@ -30,8 +30,6 @@ function comments(id)
         );
 
 }
-function makeReady()
-{
 $(document).ready
 (   
     function()
@@ -85,4 +83,3 @@ $(document).ready
     }
 
 );
-}

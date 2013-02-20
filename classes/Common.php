@@ -123,22 +123,14 @@ function printProjects($project)
         <!DOCTYPE html>
         <html>
         <head>
-            <meta charset = '".  $charset."'> 
-            <script src='//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js' defer ></script>
-            <script src='scripts.js' defer></script>
-            <script src='bootstrap/js/bootstrap.min.js' defer></script>";
-
-    	    include_once(__dir__ . "/../analyticstracking.php");
+            <meta charset = '".  $charset."'> ";
+            include_once(__dir__ . "/../analyticstracking.php");
 	echo"
-
             <link rel='stylesheet' type='text/css' href='style.css' />
             <title>". $title ."</title>
             <meta name ='description' content = '". $description."'>
             <meta name ='keywords' content = '".  $keywords."'>
             <meta name ='author' content = '".  $author."'>
-            <script type = 'text/javascript' defer>
-            makeReady();
-            </script>
         </head>
         ";
     }
