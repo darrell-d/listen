@@ -9,6 +9,7 @@ error_reporting(E_ALL);
     global $mySQL_connection;
     $mySQL_connection = new MySQL($mysql_server,$mysql_user,$mysql_pass,$mysql_db);
     $_SESSION['mySQL_connection'] = $mySQL_connection;
+    $analyticsTracking = dirname(__FILE__) . "/../analyticstracking.php";
     
     //Print projects
 function printProjects($project)
@@ -127,7 +128,10 @@ function printProjects($project)
         <html>
         <head>
             <meta charset = '".  $charset."'> ";
-            include_once(dirname(__FILE__) . "/../analyticstracking.php");
+        if(file_exists($analyticsTracking))
+        {
+            include_once($analyticsTracking);
+        }
 	echo"
             <link rel='stylesheet' type='text/css' href='style.css' />
             <title>". $title ."</title>
