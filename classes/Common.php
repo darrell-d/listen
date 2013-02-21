@@ -2,7 +2,7 @@
 /*****Dev Settings*****/
 error_reporting(E_ALL);
 /*****End Dev Settings*****/
-    include(__dir__ . "/../config.php"); // Configuration files
+    include(dirname(__FILE__) . "/../config.php"); // Configuration files
     include("MySQL.php"); //SQL connection
     include('markdown.php');
 
@@ -127,7 +127,7 @@ function printProjects($project)
         <html>
         <head>
             <meta charset = '".  $charset."'> ";
-            include_once(__dir__ . "/../analyticstracking.php");
+            include_once(dirname(__FILE__) . "/../analyticstracking.php");
 	echo"
             <link rel='stylesheet' type='text/css' href='style.css' />
             <title>". $title ."</title>

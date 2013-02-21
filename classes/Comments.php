@@ -1,6 +1,6 @@
 <?php
 //Comments.php
-include(__dir__ . '/../config.php');
+include(dirname(__FILE__) . '/../config.php');
 include('MySQL.php');
 
 class Comments

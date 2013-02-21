@@ -1,6 +1,6 @@
 <?php
 //TODO: Make Mysql variable global
-include(__dir__ . "/../config.php"); // Configuration files
+include(dirname(__FILE__) . "/../config.php"); // Configuration files
 include('../classes/MySQL.php');
 $mySQL_connection = new MySQL($mysql_server,$mysql_user,$mysql_pass,$mysql_db);
 echo
