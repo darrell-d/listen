@@ -27,7 +27,7 @@ if($result ==1)
 }
 else
 {
-    $result = 'Error int posting';
+    $result = 'Error in posting';
 }
 /*
 if ($mySQL_connection->query($query))
