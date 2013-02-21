@@ -205,12 +205,19 @@ h1,h2,h3,h4,h5,h6
     color:#BF4930;
     font-weight:bold;
 }
-#tags
+.tags
 {
     display:inline;
     font-size: 15px;
     margin-left: 25%;
     margin-right:25%;
+    font-family: Verdana;
+}
+.tag
+{
+    display:inline;
+    font-size: 15px;
+    padding:5px;
     font-family: Verdana;
 }
 #prev

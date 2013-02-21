@@ -19,7 +19,7 @@ function printProjects($project)
             $postBody = $project['post'];
             $author = $project['poster'];
             $date = date("d M y",$project['date']);
-            $tags = $project['tags'];
+            $tags = explode(',',$project['tags']);
 
             echo
             "
@@ -35,9 +35,15 @@ function printProjects($project)
                             <div id ='date'>".
                             $date
                             ."</div>
-                            <div id ='tags'>
-                            tags:". $tags
-                            ."</div>
+                            <div class ='tags'>
+                            tags:";
+            
+            foreach($tags as $tag)
+            {
+                echo"<div class = 'tag'>$tag</div>";
+            }
+            echo
+                            "</div>
                     </div>
                     ";
     }
@@ -49,7 +55,7 @@ function printProjects($project)
             $postBody = $post['post'];
             $author = $post['poster'];
             $date = $post['date'];
-            $tags = $post['tags'];
+            $tags = explode(',',$post['tags']);
 
             $commentsDiv = 
             "
@@ -110,9 +116,15 @@ function printProjects($project)
                             <div id ='date'>".
                             $date
                             ."</div>
-                            <div id ='tags'>
-                            tags:". $tags
-                            ."</div>
+                            <div class ='tags'>
+                            tags:";
+            
+            foreach($tags as $tag)
+            {
+                echo"<div class = 'tag'>$tag</div>";
+            }
+            echo
+                            "</div>
                             <div id = 'comments'>
                             <a href ='javascript:comments(". $id .")' class = 'loadComments'>other noise</a>
                             </div>
@@ -121,7 +133,7 @@ function printProjects($project)
     }
     function printHeader($title)
     {
-            global $description,$keywords,$author,$charset;
+            global $description,$keywords,$author,$charset,$analyticsTracking;
         echo
         "
         <!DOCTYPE html>
