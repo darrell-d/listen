@@ -1,4 +1,7 @@
 <?php
+/*****Dev Settings*****/
+error_reporting(E_ALL);
+/*****End Dev Settings*****/
     include(__dir__ . "/../config.php"); // Configuration files
     include("MySQL.php"); //SQL connection
     include('markdown.php');

@@ -1,8 +1,5 @@
 <?php
 session_start();
-/*****Dev Settings*****/
-error_reporting(E_ALL);
-/*****End Dev Settings*****/
 include('classes/Common.php');
 
 printHeader("darrelld - Home"); 
