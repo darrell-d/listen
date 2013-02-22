@@ -124,7 +124,7 @@ h1,h2,h3,h4,h5,h6
     margin-left:10%;
     width:85%;
     top:2%;
-    padding: 15px;
+    padding:5px;
     font-size:25px;
     margin-bottom: 25px;
     font-family:Arial, Helvetica;
@@ -215,10 +215,15 @@ h1,h2,h3,h4,h5,h6
 }
 .tag
 {
+    background-color: #A7B4D2;
     display:inline;
     font-size: 15px;
     padding:5px;
+    margin-left: 10px;
     font-family: Verdana;
+    
+    -moz-border-radius: 20px;
+    border-radius: 20px;
 }
 #prev
 {

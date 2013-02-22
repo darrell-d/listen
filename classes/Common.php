@@ -40,7 +40,7 @@ function printProjects($project)
             
             foreach($tags as $tag)
             {
-                echo"<div class = 'tag'>$tag</div>";
+                echo"<div class = 'tag'><a href ='eghm-blah.php?tag=$tag'>$tag</a></div>";
             }
             echo
                             "</div>
@@ -121,7 +121,7 @@ function printProjects($project)
             
             foreach($tags as $tag)
             {
-                echo"<div class = 'tag'>$tag</div>";
+                echo"<div class = 'tag'><a href = 'eghm-blah.php?tag=$tag'>$tag</a></div>";
             }
             echo
                             "</div>

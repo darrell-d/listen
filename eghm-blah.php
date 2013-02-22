@@ -11,6 +11,7 @@ printHeader("darrelld - eghm-blah!");
 	</span>
 	
 	<?php
+        global $mySQL_connection;
 		if(isset($_GET['pid']))
 		{
 			/*TODO: Clean input
@@ -40,6 +41,28 @@ printHeader("darrelld - eghm-blah!");
 				echo "error";
 			}
 		}
+                else if(isset($_GET['tag']) )
+                {
+                    $tag = $_GET['tag'];
+                    $query = $mySQL_connection->prepare("SELECT * FROM posts WHERE tags LIKE '%$tag%'");
+                    $query->execute();
+
+                    $query->bind_result($id_result,$title_result,$post_result,$date_result,$comments_result,$tags_result,$posters_result);
+                    while($query->fetch() )
+                    {
+                        $post = array(
+                          "id" => $id_result,
+                            "title" => $title_result,
+                            "post" => $post_result,
+                            "poster" => $posters_result,
+                            "date" =>$date_result,
+                            "comments" => $comments_result,
+                            "tags" => $tags_result
+                        );
+                        printPosts($post);
+                        
+                    }
+                }
 		else
 		{
 			$query = "SELECT * FROM posts ORDER BY id DESC LIMIT 25";
