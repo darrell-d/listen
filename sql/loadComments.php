@@ -1,7 +1,8 @@
 <?php
-include('../classes/Comments.php');
-//TODO: clean data
-$id = $_POST['id'];
+include_once('../classes/Common.php');
+include_once('../classes/Comments.php');
+
+$id = clean($_POST['id']);
 
 $comments =  Comments::loadComments($id);
 foreach($comments as $c)

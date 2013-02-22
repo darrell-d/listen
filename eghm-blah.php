@@ -1,6 +1,6 @@
 <?php 
 session_start(); 
-include('classes/Common.php');
+include_once('classes/Common.php');
  
 printHeader("darrelld - eghm-blah!");
 ?>
@@ -19,7 +19,7 @@ printHeader("darrelld - eghm-blah!");
 			*/
 			if(is_int(intval($_GET['pid']) ) )
 			{
-				$id =$_GET['pid'];
+				$id =clean($_GET['pid']);
 				$next = $id +1;
 				$prev = $id -1;
 				$query = "SELECT * FROM posts WHERE id =" . $id;
@@ -43,7 +43,7 @@ printHeader("darrelld - eghm-blah!");
 		}
                 else if(isset($_GET['tag']) )
                 {
-                    $tag = $_GET['tag'];
+                    $tag = clean($_GET['tag']);
                     $query = $mySQL_connection->prepare("SELECT * FROM posts WHERE tags LIKE '%$tag%'");
                     $query->execute();
 

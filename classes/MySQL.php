@@ -17,6 +17,11 @@ class MySQL
 		$this->db_name = $dbName;
 		$this->db_mysqli = new mysqli($this->db_server,$this->db_user,$this->db_pass,$this->db_name) or die($this->db_mysqli->error);
 	}
+        /**Clean user input**/
+        function clean($input)
+        {
+            return $this->db_mysqli->real_escape_string($input);
+        }
 	
         /** Query DB **/
 	function query($query)

@@ -2,9 +2,9 @@
 /*****Dev Settings*****/
 error_reporting(E_ALL);
 /*****End Dev Settings*****/
-    include(dirname(__FILE__) . "/../config.php"); // Configuration files
-    include("MySQL.php"); //SQL connection
-    include('markdown.php');
+    include_once(dirname(__FILE__) . "/../config.php"); // Configuration files
+    include_once("MySQL.php"); //SQL connection
+    include_once('markdown.php');
 
     global $mySQL_connection;
     $mySQL_connection = new MySQL($mysql_server,$mysql_user,$mysql_pass,$mysql_db);
@@ -220,5 +220,11 @@ function printProjects($project)
     {
             $html = str_replace("#",$id,$html);
             return $html;
+    }
+    function clean($input)
+    {
+        global $mySQL_connection;
+        $output = $mySQL_connection->clean($input);
+        return $output;
     }
 ?>

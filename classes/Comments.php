@@ -1,7 +1,8 @@
 <?php
 //Comments.php
-include(dirname(__FILE__) . '/../config.php');
-include('MySQL.php');
+//TODO: Use paramaterized queries
+include_once(dirname(__FILE__) . '/../config.php');
+include_once('MySQL.php');
 
 class Comments
 {
