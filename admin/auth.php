@@ -33,7 +33,7 @@ else
 	}
 	else
 	{
-		$_SESSION['priv'] = "noAuth";
+		$_SESSION['priv'] = "noauth";
 		echo "Incorrect user name or password";
 	}
 	

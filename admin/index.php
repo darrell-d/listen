@@ -4,7 +4,7 @@
 *By: Darrell De Freitas 02/01/2012
 */
 session_start();
-if(!isset($_SESSION['priv']))
+if(!isset($_SESSION['priv']) || strcmp($_SESSION['priv'], "noauth") == 0)
 {
 ?>
 <!DOCTYPE html>
@@ -30,7 +30,7 @@ if(!isset($_SESSION['priv']))
 </html>
 <?php
 }
-else
+else if(strcmp($_SESSION['priv'], "Owner") == 0 )
 {
 	header('location: adminPanel.php');
 }
