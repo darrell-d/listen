@@ -9,9 +9,11 @@ foreach($comments as $c)
 {
     echo
     "
+    <div class = 'commentsbox'>
         <span class = 'commenterName'>$c[name]</span> said:
         <div class = 'userComment'>$c[comment]</div>
         <div class ='commentDate'>". date('d F Y \a\t g:i',$c['time']) ."</div>
+    </div>
     ";
 }
 ?>

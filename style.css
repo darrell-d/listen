@@ -144,6 +144,16 @@ h1,h2,h3,h4,h5,h6
     left:25%;
     right:25%;
 }
+.commentsbox
+{
+    border-style:solid;
+    border-right-style: none;
+    border-bottom-style: none;
+    border-width: 1px;
+    width:90%;
+    padding: 20px;
+    margin: 10px;
+}
 .recent
 {
     font-weight: bolder;
