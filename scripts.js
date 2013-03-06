@@ -78,6 +78,7 @@ $(document).ready
                         }
                     }
                 );
+                $('[type=submit]').val("Submit");
             }
         );
     }
