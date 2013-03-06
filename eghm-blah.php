@@ -2,7 +2,7 @@
 session_start(); 
 include_once('classes/Common.php');
 
-if(is_int(intval($_GET['pid']) ) )
+if(isset($_GET['pid']) && is_int(intval($_GET['pid']) ) )
 {
     $id =clean($_GET['pid']);
     $next = $id +1;
@@ -14,6 +14,10 @@ if(is_int(intval($_GET['pid']) ) )
 
  
     printHeader("darrelld - " . $post['title']);
+}
+else
+{
+    printHeader("darrelld - Recently");
 }
 ?>
 
