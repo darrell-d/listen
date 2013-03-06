@@ -1,7 +1,7 @@
 <?php
 include('classes/Common.php');
 
-printHeader("darrelld - Projects!");
+printHeader("darrelld - Projects");
 
 ?>
 </head>
