@@ -27,6 +27,22 @@ a:active
     text-decoration: none;
     color:#ff6677;
 }
+div.quote
+{
+    margin:50px;
+    display: block;
+    background:
+        url('.\\images\\quotes.png') left top no-repeat;
+    border-left: 3px solid #ccc;
+    padding:10px;
+    text-indent: 23px;
+    white-space: pre;
+    width: 50px;
+    margin:20px;
+    background-repeat: no-repeat;
+    font-family: 'Mono';
+ 
+}
 blockquote
 {
     display: block;
@@ -36,7 +52,8 @@ blockquote
     padding:10px;
     text-indent: 23px;
     white-space: pre;
-    
+    width: 50px;
+    margin:20px;
     background-repeat: no-repeat;
     font-family: 'Mono';
     font-size: 20px;
@@ -46,7 +63,7 @@ blockquote.code
     
     background:
         url('.\\images\\brackets.png') left top no-repeat ,
-        url('.\\images\\stekcarb.png') right bottom no-repeat;
+        url('.\\images\\stekcarb.png') left  bottom no-repeat;
     font-family: Monaco;
     font-size: 18px;
 }
