@@ -2,7 +2,8 @@
 session_start(); 
 include_once('classes/Common.php');
 
-if(isset(clean($_GET['pid'])) && is_int(intval(clean($_GET['pid'])) ) )
+$pidTest = isset($_GET['pid']) && is_int($_GET['pid']) && isset($_GET['pid']) && is_int($_GET['pid']);
+if( $pidTest )
 {
     $id = clean($_GET['pid']);
     $next = $id +1;
@@ -28,7 +29,8 @@ else
 	
 <?php
 global $mySQL_connection;
-    if(isset(clean($_GET['pid'])))
+    $pidTest = isset($_GET['pid']) && is_int($_GET['pid']);
+    if($pidTest)
     {
         /*TODO:
         * Fix ability to go to negative pages and future pages
@@ -41,7 +43,7 @@ global $mySQL_connection;
             <span id ='next'><a href='eghm-blah.php?pid=". $next ."'>Next</a></span>
         ";
     }
-    else if(isset(clean($_GET['tag'])) )
+    else if(isset($_GET['tag']) )
     {
         $tag = clean($_GET['tag']);
         $query = $mySQL_connection->prepare("SELECT * FROM posts WHERE tags LIKE '%$tag%'");
