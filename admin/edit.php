@@ -1,5 +1,4 @@
 <?php
-//TODO: Make Mysql variable global
 include('../classes/Common.php');
 echo
 "

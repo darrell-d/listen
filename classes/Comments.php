@@ -1,6 +1,5 @@
 <?php
 //Comments.php
-//TODO: Use paramaterized queries
 include_once(dirname(__FILE__) . '/../config.php');
 include_once('MySQL.php');
 

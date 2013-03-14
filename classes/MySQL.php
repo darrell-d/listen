@@ -16,6 +16,7 @@ class MySQL
 		$this->db_pass = $pass;
 		$this->db_name = $dbName;
 		$this->db_mysqli = new mysqli($this->db_server,$this->db_user,$this->db_pass,$this->db_name) or die($this->db_mysqli->error);
+                $this->db_mysqli->set_charset("UTF8");
 	}
         /**Clean user input**/
         function clean($input)

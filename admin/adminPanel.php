@@ -1,5 +1,6 @@
 <?php
-/*TODO:* Delete Post
+/*TODO:
+* Delete Post
 * Edit post
 */
 
@@ -23,10 +24,9 @@ if($_SESSION['priv'] != "Owner")
 	<h1>Welcome admin!</h1>
         <span id = "notification">
             <?php
-                if(isset($_GET['result']))
+                if(isset(clean($_GET['result'])))
                 {
-                    //TODO: Write clean function for $_GET and $_POST data
-                    echo $_GET['result'];
+                    echo clean($_GET['result']);
                 }
             ?>
         </span>

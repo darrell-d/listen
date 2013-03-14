@@ -2,9 +2,9 @@
 session_start(); 
 include_once('classes/Common.php');
 
-if(isset($_GET['pid']) && is_int(intval($_GET['pid']) ) )
+if(isset(clean($_GET['pid'])) && is_int(intval(clean($_GET['pid'])) ) )
 {
-    $id =clean($_GET['pid']);
+    $id = clean($_GET['pid']);
     $next = $id +1;
     $prev = $id -1;
     $query = "SELECT * FROM posts WHERE id =" . $id;
@@ -28,9 +28,9 @@ else
 	
 <?php
 global $mySQL_connection;
-    if(isset($_GET['pid']))
+    if(isset(clean($_GET['pid'])))
     {
-        /*TODO: Clean input
+        /*TODO:
         * Fix ability to go to negative pages and future pages
         */
         printPosts($post);
@@ -41,7 +41,7 @@ global $mySQL_connection;
             <span id ='next'><a href='eghm-blah.php?pid=". $next ."'>Next</a></span>
         ";
     }
-    else if(isset($_GET['tag']) )
+    else if(isset(clean($_GET['tag'])) )
     {
         $tag = clean($_GET['tag']);
         $query = $mySQL_connection->prepare("SELECT * FROM posts WHERE tags LIKE '%$tag%'");

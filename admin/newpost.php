@@ -1,5 +1,5 @@
-    <?php
-/*TODO:*Sanitize user input
+<?php
+/*
 *Preview mode
 *Redirect on post
 */
@@ -11,11 +11,10 @@ if($_SESSION['priv'] != "Owner")
 	die("You don't belong here!");
 }
 
-$title = $_POST['title'];
-$post = $_POST['post']; //TODO: NEITHER CAN BE TUSTED! But I'll allow it for now
+$title = clean($_POST['title']);
+$post = clean($_POST['post']); 
 $date = strtotime("now");
 
-//$query = "INSERT INTO posts (title,post, date, poster) VALUES ('". $title ."','". $post ."','". $date ."','". $_SESSION['user'] ."')";
 $query = $mySQL_connection->prepare("INSERT INTO posts (title,post, date, poster) VALUES (?,?,?,?)");
 
 $query->bind_param('ssss',$title,$post,$date,$_SESSION['user']);
@@ -29,15 +28,6 @@ else
 {
     $result = 'Error in posting';
 }
-/*
-if ($mySQL_connection->query($query))
-{
-    $result =  "Post Sucessful!";
-}
-else
-{
-    $result = "Error in saving post";
-}* */
 ?>
  
 <script type="text/javascript">

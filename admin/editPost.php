@@ -1,19 +1,21 @@
 <?php 
-	session_start();
-        include('../classes/Common.php');
-	if(isset($_POST['editPostGo']))
-	{
-            //TODO: Scrub and clean data later
-            $title = addslashes($_POST['title']);
-            $post = addslashes($_POST['post']);
-            $tags = addslashes($_POST['tags']);
-            $id = addslashes($_SESSION['id']);
-            
-            
-            $query = "UPDATE posts SET title = '". $title ."', post = '". $post ."', tags = '".  $tags."' WHERE id = '".  $id."'";
-            $mySQL_connection->query($query) or die($mySQL_connection->error);
-            echo "Post sucessfully updated";
-	}
+    session_start();
+    include('../classes/Common.php');
+
+    $editPostGo = clean($_POST['editPostGo']);
+
+    if(isset($editPostGo))
+    {
+        $title = clean($_POST['title']);
+        $post = clean($_POST['post']);
+        $tags = clean($_POST['tags']);
+        $id = clean($_SESSION['id']);
+
+
+        $query = "UPDATE posts SET title = '". $title ."', post = '". $post ."', tags = '".  $tags."' WHERE id = '".  $id."'";
+        $mySQL_connection->query($query) or die($mySQL_connection->error);
+        echo "Post sucessfully updated";
+    }
 ?>
 
 <html>
@@ -23,9 +25,11 @@
 </head>
 <?php
 //Get the current ID
-if(isset($_POST['id']))
+$postID = clean($_POST['id']);
+
+if(isset($postID))
 {
-	$_SESSION['id'] = $_POST['id'];
+	$_SESSION['id'] = $postID;
 }
 
 $query = "SELECT *  FROM posts WHERE id = '" . $_SESSION['id'] . "'";
