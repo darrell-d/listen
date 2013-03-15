@@ -14,10 +14,11 @@ if($_SESSION['priv'] != "Owner")
 $title = clean($_POST['title']);
 $post = clean($_POST['post']); 
 $date = strtotime("now");
+$tags = clean($_POST['tags']);
 
-$query = $mySQL_connection->prepare("INSERT INTO posts (title,post, date, poster) VALUES (?,?,?,?)");
+$query = $mySQL_connection->prepare("INSERT INTO posts (title,post, date, poster,tags) VALUES (?,?,?,?,?)");
 
-$query->bind_param('ssss',$title,$post,$date,$_SESSION['user']);
+$query->bind_param('sssss',$title,$post,$date,$_SESSION['user'],$tags);
 $result = $query->execute();
 
 if($result ==1)

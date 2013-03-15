@@ -1,11 +1,9 @@
 <?php 
     session_start();
     include('../classes/Common.php');
-
-    $editPostGo = clean($_POST['editPostGo']);
-
-    if(isset($editPostGo))
+    if(!empty($_POST['editPostGo']) && strcmp($_POST['editPostGo'],'Post!' ) == 0)
     {
+        
         $title = clean($_POST['title']);
         $post = clean($_POST['post']);
         $tags = clean($_POST['tags']);
@@ -25,11 +23,9 @@
 </head>
 <?php
 //Get the current ID
-$postID = clean($_POST['id']);
-
-if(isset($postID))
+if(!empty($_POST['id']))
 {
-	$_SESSION['id'] = $postID;
+	$_SESSION['id'] = clean($_POST['id']);
 }
 
 $query = "SELECT *  FROM posts WHERE id = '" . $_SESSION['id'] . "'";

@@ -3,10 +3,9 @@
     session_start();
     include('../classes/Common.php');
 
-    $deletePostGo = clean($_POST['deletePostGo']);
     $id = clean($_POST['id']);
 
-    if(isset($deletePosGo))
+    if(!empty($_POST['deletePostGo']))
     {
         $query = "DELETE FROM posts WHERE id = '". $_SESSION['id'] ."'";
         $mySQL_connection->query($query) or die($mySQL_connection->error);
@@ -32,7 +31,7 @@ $data= $result->fetch_assoc();
 ?>
 <body>
     <span id ="delConf">
-    Are you sure you want to delete this post below? (No take backs)
+    Are you sure you want to delete this post below?
     </span>
     <?php printPosts(
             array(

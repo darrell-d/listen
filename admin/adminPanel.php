@@ -1,11 +1,7 @@
 <?php
-/*TODO:
-* Delete Post
-* Edit post
-*/
-
 //Prevent un authorized access
 session_start();
+include_once('../classes/Common.php');
 if($_SESSION['priv'] != "Owner")
 {
 	die("You don't belong here!");
@@ -24,7 +20,7 @@ if($_SESSION['priv'] != "Owner")
 	<h1>Welcome admin!</h1>
         <span id = "notification">
             <?php
-                if(isset(clean($_GET['result'])))
+                if(isset($_GET['result']))
                 {
                     echo clean($_GET['result']);
                 }
