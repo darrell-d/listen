@@ -1,15 +1,23 @@
 <?php 
-    //TODO:Allow for deleting multiple posts at once
     session_start();
     include('../classes/Common.php');
-
-    $id = clean($_POST['id']);
-
-    if(!empty($_POST['deletePostGo']))
+    
+    if(!empty($_POST['deletePostGo']) )
     {
-        $query = "DELETE FROM posts WHERE id = '". $_SESSION['id'] ."'";
-        $mySQL_connection->query($query) or die($mySQL_connection->error);
-        header('Location: adminPanel.php?result=Post sucessfully deleted');
+        if(strcmp($_POST['confirmation'],"yes") == 0)
+        {
+            foreach($_SESSION['id'] as $var)
+            {
+                $query = "DELETE FROM posts WHERE id = '". $var ."'";
+                $mySQL_connection->query($query) or die($mySQL_connection->error);
+            }
+            header('Location: adminPanel.php?result=Post sucessfully deleted');
+        }
+        else
+        {
+            header('Location: adminPanel.php?result=Post deletion cancelled');
+        }
+        
     }
 ?>
 
@@ -20,36 +28,63 @@
 </head>
 <?php
 //Get the current ID
+ $id = clean($_POST['id']);
 if(isset($id))
 {
 	$_SESSION['id'] = $id;
 }
 
-$query = "SELECT *  FROM posts WHERE id = '" . $_SESSION['id'] . "'";
+$query = "SELECT *  FROM posts WHERE id =";
+
+$size = count($_SESSION['id']);
+foreach($_SESSION['id'] as $key=>$var)
+{
+    if($key == $size -1)
+    {
+        $query.= " '$var'";
+    }
+    else
+    {
+        $query.= " '$var' OR id =";
+    }
+}
+
+
 $result = $mySQL_connection->query($query);
-$data= $result->fetch_assoc();
-?>
+$demAdj= $result->num_rows > 1? "this" : "these";
+
+echo
+'
 <body>
     <span id ="delConf">
-    Are you sure you want to delete this post below?
-    </span>
-    <?php printPosts(
+    Are you sure you want to delete'. $demAdj .' post below?
+    </span>';
+while ($data= $result->fetch_assoc())
+{
+    printPosts(
             array(
-                "id"=>$_SESSION['id'],
+                "id"=>$data['id'],
                 "title"=>$data['title'],
                 "post"=>$data['post'],
                 "poster"=>$data['poster'],
                 "date"=>$data['date'],
                 "tags"=>$data['tags']
-                )
-            ) ; ?>
-    <form action ='deletePost.php' method ='POST'>
+                ),
+            false
+            );
+}
+echo'
+    <form action ="deletePost.php" method ="POST">
         <center>
-            <input type ='submit' name ='YES' value = 'YES'>
-            <input type ='submit' name ='NO' value ='NO'>
+            <input type ="submit" name ="confirmation" value = "yes">
+            <input type ="submit" name ="confirmation" value ="no">
         </center>
-            <input type ='hidden' name = 'deletePostGo' value ='true'>
+            <input type ="hidden" name = "deletePostGo" value ="true">
     </form>
 	
 </body>
 </html>
+';
+
+
+?>

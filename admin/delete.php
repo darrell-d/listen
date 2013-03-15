@@ -17,7 +17,7 @@ echo
         while ($row = $result->fetch_assoc() )
         {
                 echo
-                "<input type ='checkbox' name ='id' value = '" .  $row['id'] . "'>"
+                "<input type ='checkbox' name ='id[]' value = '" .  $row['id'] . "'>"
                     . $row['id'] . " " . $row['title'] . "<br>";
         }
 
