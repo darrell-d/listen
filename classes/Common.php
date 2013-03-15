@@ -66,10 +66,10 @@ function printPosts($post,$printComments = true)
         "
         <div id = '#' class = 'comments'>
             <div id = 'commentError'>There was an error submitting the comment</div>
-                    <input type = 'text' placeholder = 'Name' id = 'commenterName'>
-                    <br />
-                    <textarea placeholder = 'Comments...' rows = '10' cols = '50' id = 'userComment'></textarea><br>
-                    <input type = 'submit' value = 'submit'>
+                <input type = 'text' placeholder = 'Name' id = 'commenterName'>
+                <br />
+                <textarea placeholder = 'Comments...' rows = '10' cols = '50' id = 'userComment'></textarea><br>
+                <input type = 'submit' value = 'submit'>
             <div id = 'allComments'>
 
             </div>
@@ -80,19 +80,19 @@ function printPosts($post,$printComments = true)
     {
             echo
             "
-                    <div id ='entry'>
-                            <div id = 'title'> No Post!</div><div id ='author'> -- SYSTEM </div><br>
-                            <div id = 'post'>
-                            <div id = 'para'>
-                            Nothing to see here as yet. Move on.
-                            </div></div><br>
-                            <div id ='date'> BEFORE TIME</div>
-                            <div id ='tags'>
-                            tags:None</div>
-                            <div id = 'comments'>
-                            <a href=''>.......</a>
-                            </div>
+                <div id ='entry'>
+                    <div id = 'title'> No Post!</div><div id ='author'> -- SYSTEM </div><br>
+                    <div id = 'post'>
+                    <div id = 'para'>
+                    Nothing to see here as yet. Move on.
+                    </div></div><br>
+                    <div id ='date'> BEFORE TIME</div>
+                    <div id ='tags'>
+                    tags:None</div>
+                    <div id = 'comments'>
+                    <a href=''>.......</a>
                     </div>
+                </div>
             " . addComments($commentsDiv,$id);
             return;
     }

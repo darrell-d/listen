@@ -9,6 +9,9 @@
         $tags = clean($_POST['tags']);
         $id = clean($_SESSION['id']);
 
+        /*$query = $mySQL_connection->prepare("UPDATE posts SET title = ?, post = ?, tags = ? WHERE id = ?");
+        $query->bind_param('ssss',$title,$post,$tags,$id);
+        $result = $query->execute();*/
 
         $query = "UPDATE posts SET title = '". $title ."', post = '". $post ."', tags = '".  $tags."' WHERE id = '".  $id."'";
         $mySQL_connection->query($query) or die($mySQL_connection->error);
@@ -31,12 +34,13 @@ if(!empty($_POST['id']))
 $query = "SELECT *  FROM posts WHERE id = '" . $_SESSION['id'] . "'";
 $result = $mySQL_connection->query($query);
 $data= $result->fetch_assoc();
+
 ?>
 <body>
 	<span id ='editPost'>
 		<form action = 'editPost.php' method='POST'>
 			<fieldset name><legend>Edit Post</legend>
-				Title: <input type = 'text' name = 'title' value = '<?php echo $data['title']; ?>'><br>
+				Title: <input type = 'text' name = 'title' value = "<?php echo $data['title']; ?>"><br>
 				Word Vomit:<br>
 				<textarea rows = '15' cols = '50' name = 'post'><?php echo $data['post']; ?></textarea><br>
 				Tags: <input type = 'text' size = '50' name = 'tags' value = '<?php echo $data['tags']; ?>'> <br>
