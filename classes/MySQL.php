@@ -21,7 +21,19 @@ class MySQL
         /**Clean user input**/
         function clean($input)
         {
-            return $this->db_mysqli->real_escape_string($input);
+            if(is_array($input))
+            {
+                $returnArray = array();
+                foreach($input as $var)
+                {
+                    $returnArray[] = $this->db_mysqli->real_escape_string($var);
+                }
+                return $returnArray;
+            }
+            else
+            {
+                return $this->db_mysqli->real_escape_string($input);
+            }
         }
 	
         /** Query DB **/
