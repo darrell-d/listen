@@ -74,9 +74,5 @@ global $mySQL_connection;
                 printPosts($row);
         }
     }
+printFooter();
 ?>
-<script src='//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js' defer ></script>
-<script src='scripts.js' defer></script>
-<script src='bootstrap/js/bootstrap.min.js' defer></script>
-</body>
-</html>

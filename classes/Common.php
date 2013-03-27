@@ -11,7 +11,7 @@ $mySQL_connection = new MySQL($mysql_server,$mysql_user,$mysql_pass,$mysql_db);
 $_SESSION['mySQL_connection'] = $mySQL_connection;
 $analyticsTracking = dirname(__FILE__) . "/../analyticstracking.php";
     
-    //Print projects
+//Print projects
 function printProjects($project)
 {
     $title = $project['title'];
@@ -145,6 +145,7 @@ function printHeader($title)
     <!DOCTYPE html>
     <html>
     <head>
+	<meta http-equiv='X-UA-Compatible' content='IE=Edge'> 
         <meta charset = '".  $charset."'> ";
     if(file_exists($analyticsTracking))
     {
@@ -246,5 +247,17 @@ function clean($input)
     global $mySQL_connection;
     $output = $mySQL_connection->clean($input);
     return $output;
+}
+function printFooter()
+{
+    echo"
+	<script src='//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js' defer ></script>
+	<script src='scripts.js' defer></script>
+	<script src='bootstrap/js/bootstrap.min.js' defer></script>
+	<script src='https://login.persona.org/include.js' defer></script>
+	<script src = 'analyticstracking.js' defer></script>          	
+</body>
+</html>
+";
 }
 ?>

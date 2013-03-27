@@ -24,9 +24,7 @@ Be heard.
         "poster" => "darrelld",
         "date" => "1341980998",
         "tags" => "project"
-        ))
-
+        ));
+printFooter();
 ?>
-	
-</body>
-</html>
+
