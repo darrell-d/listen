@@ -1,8 +1,7 @@
 <?php 
 session_start(); 
 include_once('classes/Common.php');
-
-$pidTest = isset($_GET['pid']) && is_int($_GET['pid']) && isset($_GET['pid']) && is_int($_GET['pid']);
+$pidTest = isset($_GET['pid']) && is_numeric($_GET['pid']);
 if( $pidTest )
 {
     $id = clean($_GET['pid']);
@@ -29,7 +28,7 @@ else
 	
 <?php
 global $mySQL_connection;
-    $pidTest = isset($_GET['pid']) && is_int($_GET['pid']);
+    $pidTest = isset($_GET['pid']) && is_numeric($_GET['pid']);
     if($pidTest)
     {
         /*TODO:
