@@ -20,11 +20,18 @@ if(isset($_POST['first-submit']))
 		fwrite($file,"?>" );
 		
 		fclose($file);
+		$redirect = true;
 }
 ?>
 <html>
 	<head>
 		<title>First Setup</title>
+<?php
+if(isset($redirect))
+{
+	echo"<script> window.location ='sql/sql_setup.php'; </script>";
+}
+?>
 	</head>
 	<body>
 		<form id = 'setup-form' action = 'first-setup.php' method = 'POST'>
