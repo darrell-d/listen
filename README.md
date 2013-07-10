@@ -13,6 +13,12 @@ To run:
 
 -Copy files into web root
 
--Edit configuration file with your server details
+-Navigate to index.php and fill out server details for configuration
+
+-Using mySQL in the table `authentic_users` create a user, a MD5 password and make the type **Owner**
+
+-Login to the administrative panel via `<root_directory>/admin`
 
 -Start posting.
+
+Report issues here.
