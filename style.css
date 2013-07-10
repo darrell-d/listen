@@ -149,6 +149,7 @@ h1,h2,h3,h4,h5,h6
 }
 #entry,.project
 {
+    display: inline-block;
     margin-left:10%;
     width:85%;
     top:2%;
@@ -354,4 +355,8 @@ margin-left:25%;
 {
     font-family: Verdana;
     font-size: small;
+}
+#post
+{
+    display: inline;
 }
