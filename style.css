@@ -52,7 +52,8 @@ blockquote
     padding:10px;
     text-indent: 23px;
     white-space: pre;
-    width: 50px;
+    width: 85%;
+    word-break: break-word;
     margin:20px;
     background-repeat: no-repeat;
     font-family: 'Mono';
@@ -66,6 +67,16 @@ blockquote.code
         url('.\\images\\stekcarb.png') left  bottom no-repeat;
     font-family: Monaco;
     font-size: 18px;
+    padding-left: 20px;
+    padding-right: 20px;
+    word-break: break-word;
+    width: 85%;
+    padding-bottom: 40px;
+    padding-top: 40px;
+    background-color: #C7C7C7;
+    border-radius: 10px;
+    moz-border-radius: 10px;
+    text-indent: 0px;
 }
 form
 {
