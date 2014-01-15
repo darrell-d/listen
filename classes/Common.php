@@ -270,4 +270,25 @@ function printFooter()
 </html>
 ";
 }
+
+function getLatestPost()
+{
+    global $mySQL_connection;
+
+    //Query for front page post
+    $query = "SELECT * from posts WHERE tags NOT LIKE '%_test%' ORDER BY id DESC LIMIT 1";
+    $result = $mySQL_connection->query($query);
+    $post = $result->fetch_assoc();
+    $rowCount =  $result->num_rows;
+
+    return array
+    (
+        'query'     =>  $query,
+        'result'    =>  $result,
+        'post'      =>  $post,
+        'rowCount'  =>  $rowCount
+    );
+
+}
+
 ?>

@@ -9,19 +9,15 @@
 
 	
     include('classes/Common.php');
-    //Queyy for front page post
-    $query = "SELECT * from posts ORDER BY id DESC LIMIT 1";
-    $result = $mySQL_connection->query($query);
-    $post = $result->fetch_assoc();
-    $rowCount =  $result->num_rows;
+    $queryBits = getLatestPost();
 
-    printHeader("darrelld - " . $post['title']); 
+    printHeader("darrelld - " . $queryBits['post']['title']); 
 ?>
 <body>
 <?php 
     printNav($_SERVER['PHP_SELF']);
     //Display the latest post
-    printPosts($post);
+    printPosts($queryBits['post']);
     printFooter();
 ?>
 
