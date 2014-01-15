@@ -4,17 +4,19 @@
     if(!empty($_POST['editPostGo']) && strcmp($_POST['editPostGo'],'Post!' ) == 0)
     {
         
-        $title = clean($_POST['title']);
-        $post = clean($_POST['post']);
-        $tags = clean($_POST['tags']);
-        $id = clean($_SESSION['id']);
+        $title = $_POST['title'];
+        $post = $_POST['post'];
+        $tags = $_POST['tags'];
+        $id = $_SESSION['id'];
 
         /*$query = $mySQL_connection->prepare("UPDATE posts SET title = ?, post = ?, tags = ? WHERE id = ?");
         $query->bind_param('ssss',$title,$post,$tags,$id);
         $result = $query->execute();*/
 
-        $query = "UPDATE posts SET title = '". $title ."', post = '". $post ."', tags = '".  $tags."' WHERE id = '".  $id."'";
-        $mySQL_connection->query($query) or die($mySQL_connection->error);
+
+        $query = $mySQL_connection->prepare("UPDATE posts SET title = ?, post = ?, tags = ? WHERE id = ?");
+        $query->bind_param('sssi',$title,$post,$tags,$id);
+        $query->execute();
         echo "Post sucessfully updated";
     }
 ?>
@@ -31,9 +33,13 @@ if(!empty($_POST['id']))
 	$_SESSION['id'] = clean($_POST['id']);
 }
 
-$query = "SELECT *  FROM posts WHERE id = '" . $_SESSION['id'] . "'";
-$result = $mySQL_connection->query($query);
-$data= $result->fetch_assoc();
+$query = $mySQL_connection->prepare("SELECT *  FROM posts WHERE id = ?");
+
+$query->bind_param('i',$_SESSION['id']);
+$query->execute();
+
+$data = $query->get_result();
+$data= $data->fetch_assoc();
 
 ?>
 <body>

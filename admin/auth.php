@@ -6,10 +6,10 @@ session_start(); //Regsiter session
 $user = clean($_POST['user']);
 $pass = clean($_POST['password']);
 //Search for user
-//Assumes unique user names. Gauruantee in sign up process.
-//$query = "SELECT pass, type FROM authentic_users WHERE `user` ='" . $user . "'";
+/*Assumes unique user names. 
+**TODO: Gauruantee in sign up process.
+*/
 $query = $mySQL_connection->prepare("SELECT pass, type FROM authentic_users WHERE `user` = ?");
-//$result = $mySQL_connection->query($query);
 $query->bind_param('s',$user);
 $query->execute();
 $query->bind_result($dbPass,$type);

@@ -1,6 +1,7 @@
 <?php 
     session_start();
     include('../classes/Common.php');
+    global $mySQL_connection;
     
     if(!empty($_POST['deletePostGo']) )
     {
@@ -8,8 +9,9 @@
         {
             foreach($_SESSION['id'] as $var)
             {
-                $query = "DELETE FROM posts WHERE id = '". $var ."'";
-                $mySQL_connection->query($query) or die($mySQL_connection->error);
+                $query = $mySQL_connection->prepare("DELETE FROM posts WHERE id = ?");
+                $query->bind_param('i',$var);
+                $query->execute();
             }
             header('Location: adminPanel.php?result=Post sucessfully deleted');
         }

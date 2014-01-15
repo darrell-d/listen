@@ -12,8 +12,9 @@ echo
 <legend style = 'background:#231243; size:30px; padding: 5px;'>Delete Post</legend><br><br>
 ";
 
-        $query = "SELECT id, title FROM posts";
-        $result = $mySQL_connection->query($query);
+        $query = $mySQL_connection->prepare("SELECT id, title FROM posts");
+        $query->execute();
+        $result = $query->get_result();
         while ($row = $result->fetch_assoc() )
         {
                 echo

@@ -10,8 +10,10 @@ echo
 <legend><a href= javascript:onclick=loadPanel('delete.php')>Delete Post</a></legend><br><br>
 ";
 
-        $query = "SELECT id, title FROM posts";
-        $result = $mySQL_connection->query($query);
+        $query = $mySQL_connection->prepare("SELECT id, title FROM posts");
+        $query->execute();
+        $result = $query->get_result();
+        
         while ($row = $result->fetch_assoc() )
         {
                 echo
