@@ -5,7 +5,7 @@ include('../config.php');
 
 //$mySQL_connection = new MySQL($mysql_server,$mysql_user,$mysql_pass);
 
-$mySQL_connection = new mysqli("localhost","root","understand");
+$mySQL_connection = new mysqli($mysql_server,$mysql_user,$mysql_pass);
 $command = "";
 $file = fopen('db_setup.sql','r');
 

@@ -21,6 +21,11 @@ function printProjects($project)
     $date = date("d M y",$project['date']);
     $tags = explode(',',$project['tags']);
 
+    if(in_array('_test', $tags))
+    {
+        return;
+    }
+
     echo
     "
         <div class ='project'>
@@ -60,6 +65,11 @@ function printPosts($post,$printComments = true)
     $tags = explode(',',$post['tags']);
 
      $commentsDiv = "";
+    if(in_array('_test', $tags))
+    {
+        return;
+    }
+
     if($printComments)
     {
         $commentsDiv = 
