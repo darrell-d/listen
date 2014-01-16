@@ -73,10 +73,15 @@ blockquote.code
     width: 85%;
     padding-bottom: 40px;
     padding-top: 40px;
-    background-color: #C7C7C7;
+    background-color: #FFDEAD;
     border-radius: 10px;
     moz-border-radius: 10px;
     text-indent: 0px;
+}
+
+code
+{
+    background-color: #FFDEAD;/*navajowhite*/
 }
 form
 {
