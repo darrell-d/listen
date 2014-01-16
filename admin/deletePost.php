@@ -51,15 +51,17 @@ foreach($_SESSION['id'] as $key=>$var)
     }
 }
 
+$stmt = $mySQL_connection->prepare($query);
+$stmt->execute();
+$result = $stmt->get_result();
 
-$result = $mySQL_connection->query($query);
-$demAdj= $result->num_rows > 1? "this" : "these";
+$demAdj= $result->num_rows > 1? "these" : "this";
 
 echo
 '
 <body>
     <span id ="delConf">
-    Are you sure you want to delete'. $demAdj .' post below?
+    Are you sure you want to delete '. $demAdj .' post(s) below?
     </span>';
 while ($data= $result->fetch_assoc())
 {

@@ -13,7 +13,8 @@ while($data = fgets($file) )
 {
 	$command = eval($data);
 	echo $command . "<br>";
-	$mySQL_connection->query($command) or die ($mySQL_connection->error);
+	$stmt = $mySQL_connection->prepare($command);
+	$stmt->execute();
 }
 echo "Database structure created";
 ?>

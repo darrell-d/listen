@@ -35,14 +35,6 @@ class MySQL
                 return $this->db_mysqli->real_escape_string($input);
             }
         }
-	
-        /** Query DB **/
-    	function query($query)
-    	{
-                $result =  $this->db_mysqli->query($query)or die ($this->db_mysqli->error);
-                return $result;
-    		
-    	}
         /**Returns a prepared Satement**/
         function getPreparedQuery($query)
         {

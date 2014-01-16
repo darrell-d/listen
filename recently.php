@@ -1,7 +1,10 @@
 <?php
 
 $query = "SELECT id,title from posts WHERE tags NOT LIKE '%_test%' ORDER BY id DESC";
-$result = $mySQL_connection->query($query);
+$stmt = $mySQL_connection->prepare($query);
+$stmt->execute();
+$result = $stmt->get_result();
+
 $recentCount = $result->num_rows;
 
 if(0 < $recentCount)

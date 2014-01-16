@@ -7,9 +7,13 @@ if( $pidTest )
     $id = clean($_GET['pid']);
     $next = $id +1;
     $prev = $id -1;
-    $query = "SELECT * FROM posts WHERE id =" . $id;
+    $query = "SELECT * FROM posts WHERE id = ?";
 
-    $result = $mySQL_connection->query($query);
+    $stmt = $mySQL_connection->prepare($query);
+    $stmt->bind_param('i', $id);
+    $stmt->execute();
+
+    $result= $stmt->get_result();
     $post = $result->fetch_assoc();
 
  
@@ -67,7 +71,10 @@ global $mySQL_connection;
     else
     {
         $query = "SELECT * FROM posts ORDER BY id DESC LIMIT 25";
-        $result = $mySQL_connection->query($query);
+        $stmt = $mySQL_connection->prepare($query);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
         while($row = $result->fetch_assoc() )
         {
                 printPosts($row);

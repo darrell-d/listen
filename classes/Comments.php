@@ -1,7 +1,6 @@
 <?php
 //Comments.php
-include_once(dirname(__FILE__) . '/../config.php');
-include_once('MySQL.php');
+global $mySQL_connection;
 
 class Comments
 {
@@ -13,21 +12,25 @@ class Comments
     
     public static function saveComment($id,$name,$comment,$time)
     {
-        global $mysql_user,$mysql_pass,$mysql_server,$mysql_db;
-        $mysql = new MySQL($mysql_server,$mysql_user,$mysql_pass,$mysql_db);
+        global $mySQL_connection;
+        $stmt = $mySQL_connection->prepare("INSERT INTO `comments` (`postID`,`name`,`comment`,`time` ) VALUES (?,?,?,?)");
+        $stmt->bind_param('issi',$id,$name,$comment,$time);
         
-        $result = $mysql->query("INSERT INTO `comments` (`postID`,`name`,`comment`,`time` ) VALUES ('". $id ."', '". $name ."','". $comment ."','". $time ."')");
-        return $result;
+        return $stmt->execute();
         
     }
     
     public static function loadComments($id)
     {
-        global $mysql_user,$mysql_pass,$mysql_server,$mysql_db;
-        $mysql = new MySQL($mysql_server,$mysql_user,$mysql_pass,$mysql_db);
-        $query = "SELECT name, comment, time FROM `comments` WHERE postID ='". $id ."' ORDER BY time DESC";
+        global $mySQL_connection;
+        $query = "SELECT name, comment, time FROM `comments` WHERE postID =? ORDER BY time DESC";
+        $stmt = $mySQL_connection->prepare($query);
+
+        $stmt->bind_param('i',$id);
+        $stmt->execute();
+
+        $result = $stmt->get_result();
         
-        $result = $mysql->query($query);
         $comments = array();
         while($data = $result->fetch_assoc() )
         {
@@ -36,9 +39,15 @@ class Comments
         return $comments;
     }
     
-    public static function deleteComment()
+    public static function deleteComment($id)
     {
-        $query = "DELETE FROM `comments` WHERE `id` ='". $this->id ."'";
+        global $mySQL_connection;
+        
+        $query = "DELETE FROM `comments` WHERE `id` =?";
+        $stmt = $mySQL_connection->prepare($query);
+
+        return $stmt->execute();
+
     }
     
     
