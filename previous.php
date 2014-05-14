@@ -70,7 +70,7 @@ global $mySQL_connection;
     }
     else
     {
-        $query = "SELECT * FROM posts ORDER BY id DESC LIMIT 25";
+        $query = "SELECT * FROM posts ORDER BY id DESC LIMIT 25 OFFSET 1";
         $stmt = $mySQL_connection->prepare($query);
         $stmt->execute();
         $result = $stmt->get_result();
