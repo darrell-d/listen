@@ -18,7 +18,7 @@ function printProjects($project)
     $url = $project['url'];
     $postBody = $project['post'];
     $author = $project['poster'];
-    $date = date("d M y",$project['date']);
+    $date = date("d M Y",$project['date']);
     $tags = explode(',',$project['tags']);
 
     echo
@@ -99,7 +99,7 @@ function printPosts($post,$printComments = true)
     }
     if($date!= "" && $date != null)
     {
-            $date = date("j M y",$date);
+            $date = date("j M Y",$date);
     }
     else
     {
@@ -168,75 +168,24 @@ function printNav($pageName)
 {
     global $mySQL_connection;
 
-    $fileName = explode("/", $pageName);
-    $arrCount = count($fileName);
-    if($arrCount < 2)
-    {
-        $fileName = explode("\\", $pageName);
-        $arrCount = count($fileName);
-    }
-
-    $pageName = $fileName[$arrCount - 1];
-    if(strcmp($pageName,"index.php") == 0 )
-    {
-        echo 
-        "
-            <table id = 'navigation'>
-                <tr><td><b>Home</b></td></tr>
-                <tr><td><a href = 'projects.php'>Projects</a></td></tr>
-                <tr><td><hr class = 'navHR'></td></tr>
-                <tr ><td><div class= 'recent'><a href = 'eghm-blah.php'>Recently</a></div></td></tr>
-        ";
-        
-        include('recently.php');
-        
-        echo 
-        "
-            <tr id= 'sidebar-posts'>
-                <td></td>
-            </tr>
-            </table>
-        ";
-    }
-    else if(strcmp($pageName,"projects.php") == 0 )
-    {
-        echo "
-                <table id = 'navigation'>
-                    <tr><td><a href='index.php'>Home</a></td></tr>
-                    <tr><td><b>Projects</b></td></tr>
-                    <tr><td><hr class = 'navHR'></td></tr>
-                    <tr><td><div class= 'recent'><a href = 'eghm-blah.php'>Recently</a></div></td></tr>
-             ";
-        
-        include('recently.php');
-        
-        echo 
-        "
-            <tr id= 'sidebar-posts'>
-            </tr>
-            </table>
-        ";
-    }
-    else if(strcmp($pageName,"eghm-blah.php") == 0 )
-    {
-        echo 
-        "
-            <table id = 'navigation'>
-                <tr><td><a href='index.php'>Home</a></td></tr>
-                <tr><td><a href = 'projects.php'>Projects</a></td></tr>
-                <tr><td><hr class = 'navHR'></td></tr>
-                <tr id= 'recent'><td><b>Recently</b></td></tr>
-         ";
-        
-        include('recently.php');
-        
-        echo 
-        "
-            <tr id= 'sidebar-posts'>
-                </tr>
-            </table>
-        ";
-    }
+    echo 
+    "
+        <table id = 'navigation'>
+            <tr><td><b><a href ='index.php'>Home</a></b></td></tr>
+            <tr><td><a href = 'about.php'>About me</a></td></tr>
+            <tr><td><a href = 'https://twitter.com/_darrelld'>@_darrelld</a></td></tr>
+            <tr><td><a href = 'projects.php'>Projects</a></td></tr>
+    ";
+    
+    //include('recently.php');
+    
+    echo 
+    "
+        <tr id= 'sidebar-posts'>
+            <td></td>
+        </tr>
+        </table>
+    ";
 }
 function addcomments($html, $id)
 {

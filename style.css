@@ -50,38 +50,40 @@ blockquote
         url('.\\images\\quotes.png') left top no-repeat;
     border-left: 3px solid #ccc;
     padding:10px;
-    text-indent: 23px;
+    text-indent: 20px;
     white-space: pre;
     width: 85%;
     word-break: break-word;
     margin:20px;
     background-repeat: no-repeat;
     font-family: 'Mono';
-    font-size: 20px;
+    font-size: 10pt;
 }
 blockquote.code
 {
     
     background:
-        url('.\\images\\brackets.png') left top no-repeat ,
-        url('.\\images\\stekcarb.png') left  bottom no-repeat;
+        url('.\\images\\code.png') left top no-repeat;
     font-family: Monaco;
-    font-size: 18px;
-    padding-left: 20px;
-    padding-right: 20px;
+    font-size: 8pt;
+    white-space: pre;
+    padding:10px;
+    padding-left:35px;
+    padding-top:20px;
     word-break: break-word;
     width: 85%;
-    padding-bottom: 40px;
-    padding-top: 40px;
     background-color: #FFDEAD;
     border-radius: 10px;
     moz-border-radius: 10px;
-    text-indent: 0px;
 }
 
 code
 {
+    color:#793636;
     background-color: #FFDEAD;/*navajowhite*/
+    padding:5px;
+    font-family: Monaco;
+    font-size:8pt;
 }
 form
 {
@@ -106,7 +108,7 @@ body
     background: url('images/background.png') repeat;
     background-attachment: fixed;
     font-family:Monaco;
-    font-size:25px;
+    font-size:12pt;
 }
 h1,h2,h3,h4,h5,h6
 {
