@@ -41,7 +41,7 @@ function printProjects($project)
 
     foreach($tags as $tag)
     {
-        echo"<div class = 'tag'><a href ='eghm-blah.php?tag=$tag'>$tag</a></div>";
+        echo"<div class = 'tag'><a href ='previous.php?tag=$tag'>$tag</a></div>";
     }
     echo
         "
@@ -112,7 +112,7 @@ function printPosts($post,$printComments = true)
     echo
     "
             <div id ='entry'>
-                    <div id = 'title'><a href='eghm-blah.php?pid=". $id ."'>".
+                    <div id = 'title'><a href='previous.php?pid=". $id ."'>".
                     $title
                     ."</a></div><div id ='author'> -- ". $author ."</div><br>
                     <div id = 'post'>
@@ -128,7 +128,7 @@ function printPosts($post,$printComments = true)
 
     foreach($tags as $tag)
     {
-        echo"<div class = 'tag'><a href = 'eghm-blah.php?tag=$tag'>$tag</a></div>";
+        echo"<div class = 'tag'><a href = 'previous.php?tag=$tag'>$tag</a></div>";
     }
     echo
                     "</div>
@@ -175,6 +175,8 @@ function printNav($pageName)
             <tr><td><a href = 'about.php'>About me</a></td></tr>
             <tr><td><a href = 'https://twitter.com/_darrelld'>@_darrelld</a></td></tr>
             <tr><td><a href = 'projects.php'>Projects</a></td></tr>
+            <tr><td><a href = 'previous.php'>Older posts</a></td></tr>
+
     ";
     
     //include('recently.php');

@@ -42,8 +42,8 @@ global $mySQL_connection;
         echo
         "
             <br>
-            <span id ='prev'><a href='eghm-blah.php?pid=". $prev ."'>Previous</a></span>
-            <span id ='next'><a href='eghm-blah.php?pid=". $next ."'>Next</a></span>
+            <span id ='prev'><a href='previous.php?pid=". $prev ."'>Previous</a></span>
+            <span id ='next'><a href='previous.php?pid=". $next ."'>Next</a></span>
         ";
     }
     else if(isset($_GET['tag']) )

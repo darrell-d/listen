@@ -14,7 +14,7 @@ if(0 < $recentCount)
 		echo
 		"
 			<tr class = 'recentTitles'>
-				<td><a href='eghm-blah.php?pid=". $row['id'] ."'>". $row['title'] ."</a></td>
+				<td><a href='previous.php?pid=". $row['id'] ."'>". $row['title'] ."</a></td>
 			</tr>
 		";
 	}
