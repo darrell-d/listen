@@ -24,14 +24,14 @@ function printProjects($project)
     echo
     "
         <div class ='project'>
-            <div id = 'title'><a href='$url'>".
+            <div id = 'title'><a href='$url' id = 'header'><h2>".
             $title
-            ."</a></div><div id ='author'> -- ". $author ."</div><br>
+            ."</h2></a></div>
             <div id = 'post'>
             <div id = 'para'>
             ".
             Markdown($postBody)
-            ."</div></div><br>
+            ."</div></div>
             <div id ='date'>".
             $date
             ."</div>
@@ -112,9 +112,9 @@ function printPosts($post,$printComments = true)
     echo
     "
             <div id ='entry'>
-                    <div id = 'title'><a href='previous.php?pid=". $id ."'>".
+                    <div id = 'title'><h2>".
                     $title
-                    ."</a></div><div id ='author'> -- ". $author ."</div><br>
+                    ."</h2></div>
                     <div id = 'post'>
                     <div id = 'para'>
                     ".
@@ -123,8 +123,7 @@ function printPosts($post,$printComments = true)
                     <div id ='date'>".
                     $date
                     ."</div>
-                    <div class ='tags'>
-                    tags:";
+                    <div class ='tags'>tags:";
 
     foreach($tags as $tag)
     {
@@ -133,7 +132,7 @@ function printPosts($post,$printComments = true)
     echo
                     "</div>
                     <div id = 'comments'>
-                    <a href ='javascript:comments(". $id .")' class = 'loadComments'>other noise</a>
+                    <a href ='javascript:comments(". $id .")' class = 'loadComments'>comments</a>
                     </div>
             </div>
             " . addComments($commentsDiv,$id);

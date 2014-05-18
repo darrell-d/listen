@@ -72,15 +72,12 @@ blockquote.code
     padding-top:20px;
     word-break: break-word;
     width: 85%;
-    background-color: #FFDEAD;
     border-radius: 10px;
     moz-border-radius: 10px;
 }
 
 code
 {
-    color:#793636;
-    background-color: #FFDEAD;/*navajowhite*/
     padding:5px;
     font-family: Monaco;
     font-size:8pt;
@@ -109,10 +106,52 @@ body
     background-attachment: fixed;
     font-family:Monaco;
     font-size:12pt;
+    color:#07081A;
 }
 h1,h2,h3,h4,h5,h6
 {
     font-family: Arial;
+    margin-top:0px;
+    margin-bottom:0px;
+    color: #222;
+}
+h1
+{
+    font-size: 36pt;
+    text-transform:uppercase;
+    text-decoration:none;
+    font-family: Arial;
+    font-weight:bold;
+}
+h2
+{
+    font-size: 24pt;
+    text-transform:uppercase;
+    text-decoration:none;
+    font-family: Arial;
+    font-weight:bold;
+}
+h3
+{
+    font-size: 18pt;
+}
+h4
+{
+    font-size: 14pt;
+}
+h5
+{
+    font-size: 12pt;
+}
+h6
+{
+    font-size: 10pt;
+}
+input,textarea
+{
+
+    font-family: Arial, Helvetica;
+    font-size:12pt;
 }
 .navHR
 {
@@ -120,6 +159,14 @@ h1,h2,h3,h4,h5,h6
     border: 2px;
     margin-left: 0%;
     border-style:dashed;
+}
+#header:hover
+{
+    text-decoration: none;
+}
+#header h2
+{
+    color:#4488ee!important;
 }
 #sidebar-posts
 {
@@ -160,11 +207,11 @@ h1,h2,h3,h4,h5,h6
     margin-left:10%;
     width:85%;
     top:2%;
-    padding:5px;
+    padding:20px;
     font-size:25px;
     margin-bottom: 25px;
     font-family:Arial, Helvetica;
-    background:#ededed;
+    background:#E2E2E2;
 
     box-shadow: 3px 3px 1px #888888;
     -moz-border-radius: 5px;
@@ -172,7 +219,7 @@ h1,h2,h3,h4,h5,h6
 }
 .project
 {
-    background:#EED770;
+    background:#CFF09E;
 }
 #admin_area
 {
@@ -182,13 +229,15 @@ h1,h2,h3,h4,h5,h6
 }
 .commentsbox
 {
-    border-style:solid;
+    border-style: solid;
     border-right-style: none;
-    border-bottom-style: none;
+    border-top-style: none;
+    /*border-bottom-style: none;*/
     border-width: 1px;
-    width:90%;
-    padding: 20px;
-    margin: 10px;
+    width: 90%;
+    padding-top:20px;
+    padding-bottom:20px;
+    border-left-style: none;
 }
 .recent
 {
@@ -202,6 +251,10 @@ h1,h2,h3,h4,h5,h6
     font-family: Arial;
     font-size: 15px;
 }
+.userComment
+{
+    padding:10px;
+}
 #auth
 {
     position:absolute;
@@ -212,20 +265,9 @@ h1,h2,h3,h4,h5,h6
     padding-top:50px;
 }
 
-#title a
-{
-    text-transform:uppercase;
-    text-decoration:none;
-    font-family: Arial;
-    font-weight:bold;
-    font-size:20px;
-    margin-left: 20px;
-}
+
 #para
 {
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom:0px;
     margin-top:0px;
     font-size:15px;
 
@@ -238,17 +280,15 @@ h1,h2,h3,h4,h5,h6
 #comments
 {
     display:inline;
-    float:right;
     font-size:20px;
 }
 #date
 {
     display:inline;
-    margin-left: 20px;
     text-transform:uppercase;
     font-size: 20px;
     font-family: Helvetica;
-    color:#BF4930;
+    color:#0B486B;
     font-weight:bold;
 }
 .tags
@@ -261,15 +301,14 @@ h1,h2,h3,h4,h5,h6
 }
 .tag
 {
-    background-color: #A7B4D2;
     display:inline;
     font-size: 15px;
     padding:5px;
     margin-left: 10px;
     font-family: Verdana;
-    
-    -moz-border-radius: 20px;
-    border-radius: 20px;
+    border: 1px solid #0B486B;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 #prev
 {
@@ -341,27 +380,22 @@ margin-left:25%;
 }
 .comments
 {
-    margin-left:15%;
+    margin-left:10%;
 }
 .loadComments
 {
-    font-family: Verdana;
-    font-size:medium
-}
-.commenterName
-{
 
-    font-family: Verdana;
-    font-weight: bold;
-}
-.userComment
-{
-    font-family: Verdana;
+    font-family: Arial, Helvetica;
+    font-size:medium
 }
 .commentDate
 {
-    font-family: Verdana;
+    font-family: Arial, Helvetica;
     font-size: small;
+}
+#allComments
+{
+    font-family:Arial, Helvetica;
 }
 #post
 {
