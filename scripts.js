@@ -29,6 +29,10 @@ function comments(id)
             }
         );
 
+        $('html, body').animate({
+            scrollTop: $(".comments").offset().top
+        }, 2000);
+
 }
 $(document).ready
 (   
