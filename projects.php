@@ -15,11 +15,7 @@ printProjects(
         "id" => "N/A",
         "url" => "https://github.com/darrell-d/listen",
         "post" => 
-        "
-You want to speak. You have words that need to be heard. You need people to listen. 
-listen! lets you do that. 
-Be heard.
-        ",
+        "<p>This website runs on a platform that I wrote. I call it listen! It's still a work in progress and really a testing ground for my to mess around with PHP.</p><p> Feel free to use it as you wish if it suits your needs or modify it. Full source can be found on <a href= 'https://github.com/darrell-d/listen'>github</a>.</p><p> One big requirements is PHP 5.4+. It's been fully tested with Apache 2.4, Mysql 5.5 and PHP 5.6</p>",
         "title" => "listen!",
         "poster" => "darrelld",
         "date" => "1341980998",
