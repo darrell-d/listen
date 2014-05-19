@@ -192,6 +192,10 @@ input,textarea
 {
     display:inline;
 }
+#title h2
+{
+    color:#0B486B;
+}
 #navigation
 {
     position:fixed;
@@ -386,7 +390,9 @@ margin-left:25%;
 {
 
     font-family: Arial, Helvetica;
-    font-size:medium
+    font-size:medium;
+    float: right;
+    margin-top: 12px;
 }
 .commentDate
 {
