@@ -22,3 +22,9 @@ To run:
 -Start posting.
 
 Report issues here.
+
+
+Todo
+======
+
+1. Move project and about content to database to generalize
