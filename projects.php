@@ -21,6 +21,17 @@ printProjects(
         "date" => "1341980998",
         "tags" => "project"
         ));
+printProjects(   
+    array(
+        "id" => "N/A",
+        "url" => "https://github.com/darrell-d/log.me",
+        "post" => 
+        "<p>My attempt at a more in depth console.log() functiong</p><p>log.me provides more information upfront about variables displayed to thec onsole that regular cosole.log call would. It is especially usefull in quickly highlighting user type errors</p>",
+        "title" => "log.me",
+        "poster" => "darrelld",
+        "date" => date("now"),
+        "tags" => "project"
+        ));
 printFooter();
 ?>
 
