@@ -11,10 +11,10 @@ if($_SESSION['priv'] != "Owner")
 	die("You don't belong here!");
 }
 
-$title = clean($_POST['title']);
-$post = clean($_POST['post']); 
+$title = $_POST['title'];
+$post = $_POST['post']; 
 $date = strtotime("now");
-$tags = clean($_POST['tags']);
+$tags = $_POST['tags'];
 
 $query = $mySQL_connection->prepare("INSERT INTO posts (title,post, date, poster,tags) VALUES (?,?,?,?,?)");
 
