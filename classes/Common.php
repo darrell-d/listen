@@ -234,5 +234,27 @@ function getLatestPost()
     );
 
 }
+function getProjects()
+{
+    global $mySQL_connection;
+
+    //Query for front page post
+    $query = "SELECT * from projects  ORDER BY id DESC LIMIT 1";
+    $stmt = $mySQL_connection->prepare($query);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $post = $result->fetch_assoc();
+    $rowCount =  $result->num_rows;
+
+    return array
+    (
+        'query'     =>  $query,
+        'result'    =>  $result,
+        'post'      =>  $post,
+        'rowCount'  =>  $rowCount
+    );
+
+}
 
 ?>
