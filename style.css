@@ -106,14 +106,14 @@ body
     background-attachment: fixed;
     font-family:Monaco;
     font-size:12pt;
-    color:#07081A;
+    color:#171717;
 }
 h1,h2,h3,h4,h5,h6
 {
     font-family: Arial;
     margin-top:0px;
     margin-bottom:0px;
-    color: #222;
+    color: #171717;
 }
 h1
 {
@@ -127,7 +127,7 @@ h2
 {
     font-size: 24pt;
     text-transform:uppercase;
-    text-decoration:none;
+    text-decoration:underline;
     font-family: Arial;
     font-weight:bold;
 }
@@ -149,9 +149,29 @@ h6
 }
 input,textarea
 {
-
     font-family: Arial, Helvetica;
     font-size:12pt;
+}
+input,textarea
+{
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    padding: 3px 0px 3px 3px;
+    margin: 5px 1px 3px 0px;
+    border: 1px solid #DDDDDD;
+}
+input[type=text]:focus, textarea:focus {
+  box-shadow: 0 0 5px rgba(255, 152, 0, 1);
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(255, 152, 0, 1);
+}
+input[type="text"]
+{
+    height: 30px;
 }
 .navHR
 {
@@ -182,19 +202,15 @@ input,textarea
     font-size:25px;
     margin-bottom: 25px;
     font-family:Monaco, Helvetica;
-    background:#72CCD4;
+    background:#D3D3D3;
 
-    box-shadow: 3px 3px 1px #888888;
+    box-shadow: 3px 3px 1px #193441;
     -moz-border-radius: 50px;
     border-radius: 50px;
 }
 #title,#author
 {
     display:inline;
-}
-#title h2
-{
-    color:#0B486B;
 }
 #navigation
 {
@@ -215,9 +231,9 @@ input,textarea
     font-size:25px;
     margin-bottom: 25px;
     font-family:Arial, Helvetica;
-    background:#E2E2E2;
+    background:#D3D3D3;
 
-    box-shadow: 3px 3px 1px #888888;
+    box-shadow: 3px 3px 1px #193441;
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
@@ -406,4 +422,37 @@ margin-left:25%;
 #post
 {
     display: inline;
+}
+#first-setup
+{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    min-width: 475px;
+    background-color: #171717;
+    padding: 20px;
+    max-width: 25%;
+}
+#setup-header
+{
+    margin:10px;
+    color: #D3D3D3!important;
+}
+#setup-form table
+{
+    color:#D3D3D3;
+    border-spacing: 15px 15px;
+}
+#setup-form input[type='submit']
+{
+    left: 62%;
+}
+
+input[type='submit']
+{
+    background-color: #FF9800;
+    border: none;
+    padding: 9px;
+    color: #D3D3D3;
+    position: relative;
 }

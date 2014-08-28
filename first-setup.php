@@ -32,20 +32,50 @@ if(isset($redirect))
 	echo"<script> window.location ='sql/sql_setup.php'; </script>";
 }
 ?>
+<link rel="stylesheet" type="text/css" href="style.css" charset="utf-8"/>
 	</head>
 	<body>
-		<form id = 'setup-form' action = 'first-setup.php' method = 'POST'>
-			<label>Server Name<input type = 'text' name = 'server'></label><br/>
-			<label>Username<input type = 'text' name = 'user'></label><br/>
-			<label>password<input type = 'text' name = 'pass'></label><br/>
-			<label>Server database<input type = 'text' name = 'db'></label><br/>
-			
-			<label>Description<input type = 'text' name = 'description'></label><br/>
-			<label>Your Name<input type = 'text' name = 'author'></label><br/>
-			<label>Keywords<input type = 'text' name = 'keywords'></label><br/>
-			<label>Charset<input type = 'text' name = 'charset' value = 'UTF8'></label><br/>
-			<input type = 'submit' value = 'Submit'>
-			<input type ='hidden' name ='first-submit'>
-		</form>
+		<div id = "first-setup">
+			<form id = 'setup-form' action = 'first-setup.php' method = 'POST'>
+				<h4 id = "setup-header">Blog setup</h4>
+				<table>
+					<tr>
+						<td>Server Name</td>
+						<td><input type = 'text' name = 'server'></td>
+					</tr>
+					<tr>
+						<td>Username</td>
+						<td><input type = 'text' name = 'user'></td>
+					</tr>
+					<tr>
+						<td>Password</td>
+						<td><input type = 'text' name = 'pass'></td>
+					</tr>
+					<tr>
+						<td>Server Database</td>
+						<td><input type = 'text' name = 'db'></td>
+					</tr>
+					<tr>
+						<td>Description</td>
+						<td><input type = 'text' name = 'description'></td>
+					</tr>
+					<tr>
+						<td>Your Name</td>
+						<td><input type = 'text' name = 'author'></td>
+					</tr>
+					<tr>
+						<td>Keywords</td>
+						<td><input type = 'text' name = 'keywords'></td>
+					</tr>
+					<tr>
+						<td>Charset</td>
+						<td><input type = 'text' name = 'charset' value = 'UTF8'></td>
+					</tr>
+				</table>
+
+				<input type = 'submit' value = 'Submit'>
+				<input type ='hidden' name ='first-submit'>
+			</form>
+		</div>
 	</body>
 </html>
