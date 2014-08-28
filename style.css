@@ -323,12 +323,8 @@ input[type="text"],input[type="password"]
 {
     display:inline;
     font-size: 15px;
-    padding:5px;
-    margin-left: 10px;
+    margin-left: 5px;
     font-family: Verdana;
-    border: 1px solid #0B486B;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
 }
 #prev
 {
