@@ -3,23 +3,32 @@
 *Setup Configuration file for the first time software is  run
 */
 
+function writeINI($arr, $file)
+{
+	try
+	{
+		$file = fopen('config.ini','w');
+		fwrite($file,'[SQL Details]' . PHP_EOL);
+		foreach($arr as $key => $value)
+		{
+			if($key == 'description')
+			{
+				fwrite($file, PHP_EOL . '[META Data]'. PHP_EOL);
+			}
+			fwrite($file, $key .'	=		\'' .  $value . '\'' . PHP_EOL);
+		}
+	}
+	catch(Exception $e)
+	{
+		echo "Error found: " . $e->GetMessage();
+	}
+	fclose($file);
+}
+
 if(isset($_POST['first-submit']))
 {
-		$file = fopen('config.php','w');
-		fwrite($file,"<?php \n\n" );
-		fwrite($file, '$mysql_server = \'' .$_POST['server'] . "';\n" );
-		fwrite($file, '$mysql_user = \'' .$_POST['user'] . "';\n");
-		fwrite($file, '$mysql_pass = \'' .$_POST['pass'] . "';\n");
-		fwrite($file, '$mysql_db = \'' .$_POST['db'] . "';\n");
-		
-		fwrite($file, '$description = \'' .$_POST['description'] . "';\n" );
-		fwrite($file, '$author = \'' .$_POST['author'] . "';\n" );
-		fwrite($file, '$keywords = \'' .$_POST['keywords'] . "';\n" );
-		fwrite($file, '$charset = \'' .$_POST['charset'] . "';\n\n" );
-		
-		fwrite($file,"?>" );
-		
-		fclose($file);
+		unset($_POST['first-submit']);
+		writeINI($_POST,'config.ini');
 		$redirect = true;
 }
 ?>
