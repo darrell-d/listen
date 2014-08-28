@@ -1,4 +1,6 @@
 <?php
+/*****Dev Settings*****/
+error_reporting(E_ALL);
 	if(!file_exists('config.php'))
 	{
 		header('Location:first-setup.php');

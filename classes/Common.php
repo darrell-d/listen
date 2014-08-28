@@ -1,12 +1,11 @@
 <?php
-/*****Dev Settings*****/
-error_reporting(E_ALL);
-/*****End Dev Settings*****/
-include_once(dirname(__FILE__) . "/../config.php"); // Configuration files
-include_once("MySQL.php"); //SQL connection
+include_once(dirname(__FILE__) . "/../config.php");
+include_once("MySQL.php");
 include_once('markdown.php');
 
 global $mySQL_connection;
+$settings = parse_ini_file('config.ini');
+
 $mySQL_connection = new MySQL($mysql_server,$mysql_user,$mysql_pass,$mysql_db);
 $_SESSION['mySQL_connection'] = $mySQL_connection;
 $analyticsTracking = dirname(__FILE__) . "/../analyticstracking.php";
