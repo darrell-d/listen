@@ -255,5 +255,31 @@ function getProjects()
     );
 
 }
+/*
+*MarkDown file is assumed to have timestamp as the very first line
+*/
+function readMarkDownFile($fileLocation)
+{
+	$file = '';
+	$contents = '';
+	try
+	{
+		$file = fopen($fileLocation,'r');
+		
+		$timestamp = fread($file, 8192);
+		
+		while(!feof($file)))
+		{
+			$contents .= fread($file,8192)
+		}
+	}
+	catch (Exception $e)
+	{
+		echo "Error: " . $e->getMessage();
+	}
+	fclose($file);
+	
+	return array($timestamp,$contents);
+}
 
 ?>
