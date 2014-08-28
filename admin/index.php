@@ -12,7 +12,7 @@ if(!isset($_SESSION['priv']) || strcmp($_SESSION['priv'], "noauth") == 0)
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="../style.css" />
-	<title>!</title>
+	<title>Admin Login</title>
 	<meta charset = "UTF-8">
 </head>
 <body>
@@ -21,10 +21,10 @@ if(!isset($_SESSION['priv']) || strcmp($_SESSION['priv'], "noauth") == 0)
 			<div id = "auth">
 				<p id ="auth">
 					<img src = '../images/pass.png' alt ='Login'>
-					<input type = "text" name = "user" value = "User">
-					<input type = "password" name = "password" value = "Password">
+					<input type = "text" name = "user" placeholder = "User">
+					<input type = "password" name = "password" placeholder = "Password">
                                         <input type ="hidden" name ="" value="">
-					<input type ="submit" name ="submit" value ="Login">
+					<input type ="submit" name ="submit" value ="Login" id = "adminLoginBtn">
 				</p>
 			</div>
 	</form>

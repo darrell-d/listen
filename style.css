@@ -163,13 +163,13 @@ input,textarea
     margin: 5px 1px 3px 0px;
     border: 1px solid #DDDDDD;
 }
-input[type=text]:focus, textarea:focus {
+input[type=text]:focus, textarea:focus,input[type=password]:focus {
   box-shadow: 0 0 5px rgba(255, 152, 0, 1);
   padding: 3px 0px 3px 3px;
   margin: 5px 1px 3px 0px;
   border: 1px solid rgba(255, 152, 0, 1);
 }
-input[type="text"]
+input[type="text"],input[type="password"]
 {
     height: 30px;
 }
@@ -453,6 +453,10 @@ input[type='submit']
     background-color: #FF9800;
     border: none;
     padding: 9px;
-    color: #D3D3D3;
+    color: #FFF;
     position: relative;
+}
+#adminLoginBtn
+{
+	float:right;
 }
