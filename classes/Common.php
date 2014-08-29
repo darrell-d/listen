@@ -266,11 +266,11 @@ function readMarkDownFile($fileLocation)
 	{
 		$file = fopen($fileLocation,'r');
 		
-		$timestamp = fread($file, 8192);
+		$timestamp = fgets($file, 8192);
 		
-		while(!feof($file)))
+		while(!feof($file))
 		{
-			$contents .= fread($file,8192)
+			$contents .= fgets($file);
 		}
 	}
 	catch (Exception $e)
@@ -279,7 +279,24 @@ function readMarkDownFile($fileLocation)
 	}
 	fclose($file);
 	
-	return array($timestamp,$contents);
+	return array("timestamp" => $timestamp, "content" => $contents);
 }
+function getFolders($directory)
+{
+    $folders = scandir($directory);
+    $foldersVisible = array();
+    foreach($folders as $value)
+    {
+     
+        if(strpos($value, '.') === false)
+        {
+            array_push($foldersVisible, $value);
+        }
+    }
+    $ort($foldersVisible);
+
+    return $foldersVisible;
+}
+
 
 ?>
