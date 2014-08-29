@@ -293,7 +293,7 @@ function getFolders($directory)
             array_push($foldersVisible, $value);
         }
     }
-    $ort($foldersVisible);
+    sort($foldersVisible);
 
     return $foldersVisible;
 }
