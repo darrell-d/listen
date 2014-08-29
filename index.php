@@ -11,15 +11,17 @@ error_reporting(E_ALL);
 
 	
     include('classes/Common.php');
-    $queryBits = getLatestPost();
+    $path = getLatestPost();
 
-    printHeader("darrelld - " . $queryBits['post']['title']); 
+    $post = readMarkDownFile($path);
+
+    printHeader("darrelld - " . $post['title']); 
 ?>
 <body>
 <?php 
     printNav($_SERVER['PHP_SELF']);
     //Display the latest post
-    printPosts($queryBits['post']);
+    printPosts($post);
     printFooter();
 ?>
 

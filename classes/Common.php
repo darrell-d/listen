@@ -51,12 +51,7 @@ function printProjects($project)
 //Print out posts
 function printPosts($post,$printComments = true)
 {
-    $id = $post['id'];
-    $title = $post['title'];
-    $postBody = $post['post'];
-    $author = $post['poster'];
-    $date = $post['date'];
-    $tags = explode(',',$post['tags']);
+    $date = $post['timestamp'];
 
      $commentsDiv = "";
 
@@ -76,65 +71,26 @@ function printPosts($post,$printComments = true)
         </div>
         ";
     }
-    if($post == null)
-    {
-            echo
-            "
-                <div id ='entry'>
-                    <div id = 'title'> No Post!</div><div id ='author'> -- SYSTEM </div><br>
-                    <div id = 'post'>
-                    <div id = 'para'>
-                    Nothing to see here as yet. Move on.
-                    </div></div><br>
-                    <div id ='date'> BEFORE TIME</div>
-                    <div id ='tags'>
-                    tags:None</div>
-                    <div id = 'comments'>
-                    <a href=''>.......</a>
-                    </div>
-                </div>
-            " . addComments($commentsDiv,$id);
-            return;
-    }
-    if($date!= "" && $date != null)
-    {
-            $date = date("j M Y",$date);
-    }
-    else
-    {
-            $date = "before time";
-    }
-    if($tags =="")
-    {
-            $tags = "none";
-    }
+    
     echo
     "
-            <div id ='entry'>
-                    <div id = 'title'><h2>".
-                    $title
-                    ."</h2></div>
-                    <div id = 'post'>
-                    <div id = 'para'>
-                    ".
-                    Markdown($postBody)
-                    ."</div></div><br>
-                    <div id ='date'>".
-                    $date
-                    ."</div>
-                    <div class ='tags'>tags:";
-
-    foreach($tags as $tag)
-    {
-        echo"<div class = 'tag'><a href = 'previous.php?tag=$tag'>$tag</a></div>";
-    }
-    echo
-                    "</div>
-                    <div id = 'comments'>
-                    <a href ='javascript:comments(". $id .")' class = 'loadComments'>comments</a>
-                    </div>
-            </div>
-            " . addComments($commentsDiv,$id);
+    <div id ='entry'>
+            <div id = 'post'>
+            <div id = 'para'>
+            ".
+            Markdown($post['content'])
+            ."</div></div><br>
+            <div id ='date'>".
+            $date
+            ."</div>
+            <div class ='tags'></div>";
+    /*echo
+        "</div>
+        <div id = 'comments'>
+        <a href ='javascript:comments(". $id .")' class = 'loadComments'>comments</a>
+        </div>
+</div>
+            " . addComments($commentsDiv,$id);*/
 }
 function printHeader($title)
 {
@@ -214,12 +170,12 @@ function printFooter()
 function getLatestPost()
 {
     $path  ='posts/';
-    $folders = getFolders($path);
+    $folders = getFoldersAndFiles($path);
     $path .= $folders[0] . '/' ;
 
     while(true)
     {
-        $folders = getFolders($path);
+        $folders = getFoldersAndFiles($path);
         if(!empty($folders[0]) )
         {
             $path .= $folders[0] . '/';
@@ -230,25 +186,10 @@ function getLatestPost()
         }
 
     }
-    global $mySQL_connection;
+    $files = getFoldersAndFiles($path, "files");
+    $latestPost = $path . $files[0];
 
-    //Query for front page post
-    $query = "SELECT * from posts WHERE tags NOT LIKE '%_test%' ORDER BY id DESC LIMIT 1";
-    $stmt = $mySQL_connection->prepare($query);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    $post = $result->fetch_assoc();
-    $rowCount =  $result->num_rows;
-
-    return array
-    (
-        'query'     =>  $query,
-        'result'    =>  $result,
-        'post'      =>  $post,
-        'rowCount'  =>  $rowCount
-    );
-
+    return $latestPost;
 }
 function getProjects()
 {
@@ -283,8 +224,12 @@ function readMarkDownFile($fileLocation)
 	{
 		$file = fopen($fileLocation,'r');
 		
-		$timestamp = fgets($file, 8192);
-		
+		$timestamp = fgets($file);
+        $title = fgets($file);
+        $contents .= $title;
+
+        $title = substr($title,1, strlen($title));
+
 		while(!feof($file))
 		{
 			$contents .= fgets($file);
@@ -296,29 +241,38 @@ function readMarkDownFile($fileLocation)
 	}
 	fclose($file);
 	
-	return array("timestamp" => $timestamp, "content" => $contents);
+	return array("timestamp" => $timestamp, "title" => $title, "content" => $contents);
 }
-function getFolders($directory)
+function getFoldersAndFiles($directory, $typeToScanFor = "folders")
 {
-    $folders = scandir($directory);
-    $foldersVisible = array();
-    foreach($folders as $value)
+    $items = scandir($directory);
+    $itemsVisible = array();
+
+    if($typeToScanFor == "folders")
     {
-     
-        if(strpos($value, '.') === false)
+        foreach($items as $value)
         {
-            array_push($foldersVisible, $value);
+            if(strpos($value, '.') === false)
+            {
+                array_push($itemsVisible, $value);
+            }
         }
+        sort($itemsVisible);
     }
-    sort($foldersVisible);
+    else if($typeToScanFor == "files")
+    {
+        foreach($items as $value)
+        {
+            if(substr($value,0,1) != '.')
+            {
+                array_push($itemsVisible, $value);
+            }
+        }
+        sort($itemsVisible);
+    }
 
 
-    return array_reverse($foldersVisible);
-}
-
-function getFiles()
-{
-    
+    return array_reverse($itemsVisible);
 }
 
 ?>
