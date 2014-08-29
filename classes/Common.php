@@ -213,6 +213,23 @@ function printFooter()
 
 function getLatestPost()
 {
+    $path  ='posts/';
+    $folders = getFolders($path);
+    $path .= $folders[0] . '/' ;
+
+    while(true)
+    {
+        $folders = getFolders($path);
+        if(!empty($folders[0]) )
+        {
+            $path .= $folders[0] . '/';
+        }
+        else
+        {
+            break;
+        }
+
+    }
     global $mySQL_connection;
 
     //Query for front page post
@@ -295,8 +312,13 @@ function getFolders($directory)
     }
     sort($foldersVisible);
 
-    return $foldersVisible;
+
+    return array_reverse($foldersVisible);
 }
 
+function getFiles()
+{
+    
+}
 
 ?>
