@@ -103,8 +103,9 @@ function printHeader($title)
     <!DOCTYPE html>
     <html>
     <head>
-	<meta http-equiv='X-UA-Compatible' content='IE=Edge'>
-        <meta charset = '".  $charset."'> ";
+	  <meta http-equiv='X-UA-Compatible' content='IE=Edge'>
+    <meta charset = '".  $charset."'>
+    <link rel='shortcut icon' href='Star-icon-blue.ico' />";
     if(file_exists($analyticsTracking))
     {
         include_once($analyticsTracking);
