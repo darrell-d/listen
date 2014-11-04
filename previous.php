@@ -1,6 +1,10 @@
-<?php 
-session_start(); 
+<?php
+session_start();
+
 include_once('classes/Common.php');
+getAllPosts();
+global $paths;
+
 $pidTest = isset($_GET['pid']) && is_numeric($_GET['pid']);
 if( $pidTest )
 {
@@ -16,7 +20,7 @@ if( $pidTest )
     $result= $stmt->get_result();
     $post = $result->fetch_assoc();
 
- 
+
     printHeader("darrelld - " . $post['title']);
 }
 else
@@ -25,19 +29,27 @@ else
 }
 ?>
 
+
 <body>
     <span id ="navigation">
     <?php printNav($_SERVER['PHP_SELF'])?>
     </span>
-	
+
 <?php
+
+rsort($paths);
+foreach($paths as $p)
+{
+  $post = readMarkDownFile($p);
+  printPosts($post);
+
+}
+/*
 global $mySQL_connection;
     $pidTest = isset($_GET['pid']) && is_numeric($_GET['pid']);
     if($pidTest)
     {
-        /*TODO:
-        * Fix ability to go to negative pages and future pages
-        */
+
         printPosts($post);
         echo
         "
@@ -80,5 +92,6 @@ global $mySQL_connection;
                 printPosts($row);
         }
     }
+    */
 printFooter();
 ?>

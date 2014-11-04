@@ -9,19 +9,18 @@ error_reporting(E_ALL);
     session_start();
 	//Check if setup has been don.
 
-	
+
     include('classes/Common.php');
     $path = getLatestPost();
 
     $post = readMarkDownFile($path);
 
-    printHeader("darrelld - " . $post['title']); 
+    printHeader("darrelld - " . $post['title']);
 ?>
 <body>
-<?php 
+<?php
     printNav($_SERVER['PHP_SELF']);
     //Display the latest post
     printPosts($post);
     printFooter();
 ?>
-

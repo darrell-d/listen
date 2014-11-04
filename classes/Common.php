@@ -6,10 +6,11 @@ include_once('markdown.php');
 global $mySQL_connection;
 $settings = parse_ini_file(dirname(__FILE__) . '/../config.ini');
 
-$mySQL_connection = new MySQL($mysql_server,$mysql_user,$mysql_pass,$mysql_db);
+//$mySQL_connection = new MySQL($mysql_server,$mysql_user,$mysql_pass,$mysql_db);
 $_SESSION['mySQL_connection'] = $mySQL_connection;
 $analyticsTracking = dirname(__FILE__) . "/../analyticstracking.php";
-    
+$paths = array();
+
 //Print projects
 function printProjects($project)
 {
@@ -57,7 +58,7 @@ function printPosts($post,$printComments = true)
 
     if($printComments)
     {
-        $commentsDiv = 
+        $commentsDiv =
         "
         <div id = '#' class = 'comments'>
             <div id = 'commentError'>There was an error submitting the comment</div>
@@ -71,7 +72,7 @@ function printPosts($post,$printComments = true)
         </div>
         ";
     }
-    
+
     echo
     "
     <div id ='entry'>
@@ -83,7 +84,8 @@ function printPosts($post,$printComments = true)
             <div id ='date'>".
             $date
             ."</div>
-            <div class ='tags'></div>";
+            <div class ='tags'></div>
+            </div>";
     /*echo
         "</div>
         <div id = 'comments'>
@@ -100,7 +102,7 @@ function printHeader($title)
     <!DOCTYPE html>
     <html>
     <head>
-	<meta http-equiv='X-UA-Compatible' content='IE=Edge'> 
+	<meta http-equiv='X-UA-Compatible' content='IE=Edge'>
         <meta charset = '".  $charset."'> ";
     if(file_exists($analyticsTracking))
     {
@@ -122,7 +124,7 @@ function printNav($pageName)
 {
     global $mySQL_connection;
 
-    echo 
+    echo
     "
         <table id = 'navigation'>
             <tr><td><b><a href ='index.php'>Home</a></b></td></tr>
@@ -132,10 +134,10 @@ function printNav($pageName)
             <tr><td><a href = 'previous.php'>Older posts</a></td></tr>
 
     ";
-    
+
     //include('recently.php');
-    
-    echo 
+
+    echo
     "
         <tr id= 'sidebar-posts'>
             <td></td>
@@ -161,7 +163,7 @@ function printFooter()
 	<script src='scripts.js' defer></script>
 	<script src='bootstrap/js/bootstrap.min.js' defer></script>
 	<script src='https://login.persona.org/include.js' defer></script>
-	<script src = 'analyticstracking.js' defer></script>          	
+	<script src = 'analyticstracking.js' defer></script>
 </body>
 </html>
 ";
@@ -190,6 +192,52 @@ function getLatestPost()
     $latestPost = $path . $files[0];
 
     return $latestPost;
+}
+function _getAllPosts()
+{
+    $path  ='posts/';
+    $folders = getFoldersAndFiles($path);
+    var_dump($folders);
+    $path .= $folders[0] . '/' ;
+
+    while(true)
+    {
+        $folders = getFoldersAndFiles($path);
+        if(!empty($folders[0]) )
+        {
+            $path .= $folders[0] . '/';
+        }
+        else
+        {
+            break;
+        }
+
+    }
+    $files = getFoldersAndFiles($path, "files");
+    $latestPost = $path . $files[0];
+
+    return $latestPost;
+}
+function getAllPosts($path = "posts")
+{
+  global $paths;
+  $dirs = scandir($path);
+  $returnPath =$path;
+  foreach($dirs as $subdir)
+  {
+    $currentPath = $path . '/' . $subdir;
+    if(strstr($subdir,".md") == true)
+    {
+      array_push($paths,$currentPath);
+      //var_dump($paths);
+    }
+    if(strstr($subdir,".") == false)
+    {
+
+        getAllPosts($currentPath);
+    }
+  }
+
 }
 function getProjects()
 {
@@ -223,7 +271,7 @@ function readMarkDownFile($fileLocation)
 	try
 	{
 		$file = fopen($fileLocation,'r');
-		
+
 		$timestamp = fgets($file);
         $title = fgets($file);
         $contents .= $title;
@@ -240,7 +288,7 @@ function readMarkDownFile($fileLocation)
 		echo "Error: " . $e->getMessage();
 	}
 	fclose($file);
-	
+
 	return array("timestamp" => $timestamp, "title" => $title, "content" => $contents);
 }
 function getFoldersAndFiles($directory, $typeToScanFor = "folders")
