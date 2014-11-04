@@ -114,11 +114,11 @@ h1,h2,h3,h4,h5,h6
     font-family: Arial;
     margin-top:0px;
     margin-bottom:0px;
-    color: #171717;
+    color: #404040;
 }
 h1
 {
-    font-size: 36pt;
+    font-size: 24pt;
     text-transform:uppercase;
     text-decoration:none;
     font-family: Arial;
@@ -126,7 +126,7 @@ h1
 }
 h2
 {
-    font-size: 24pt;
+    font-size: 18pt;
     text-transform:uppercase;
     text-decoration:underline;
     font-family: Arial;
@@ -134,19 +134,19 @@ h2
 }
 h3
 {
-    font-size: 18pt;
+    font-size: 14pt;
 }
 h4
 {
-    font-size: 14pt;
+    font-size: 12pt;
 }
 h5
 {
-    font-size: 12pt;
+    font-size: 10pt;
 }
 h6
 {
-    font-size: 10pt;
+    font-size: 8pt;
 }
 input,textarea
 {
@@ -221,6 +221,10 @@ input[type="text"],input[type="password"]
     top:25px;
     font-family: Arial;
     font-size:16px;
+}
+#navigation a
+{
+  font-size:20px!important;
 }
 #entry,.project
 {
