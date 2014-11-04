@@ -4,7 +4,7 @@
     src: url(Monaco.tff);
 }
 
-a:link 
+a:link
 {
     text-decoration: none;
     color:#5577ff;
@@ -41,7 +41,7 @@ div.quote
     margin:20px;
     background-repeat: no-repeat;
     font-family: 'Mono';
- 
+
 }
 blockquote
 {
@@ -61,7 +61,7 @@ blockquote
 }
 blockquote.code
 {
-    
+
     background:
         url('.\\images\\code.png') left top no-repeat;
     font-family: Monaco;
@@ -107,6 +107,7 @@ body
     font-family:Monaco;
     font-size:12pt;
     color:#171717;
+    margin-top:25px;
 }
 h1,h2,h3,h4,h5,h6
 {
@@ -217,7 +218,7 @@ input[type="text"],input[type="password"]
     position:fixed;
     width:10%;
     letter-spacing:0px;
-    top:2%;
+    top:25px;
     font-family: Arial;
     font-size:16px;
 }
@@ -347,7 +348,7 @@ input[type="text"],input[type="password"]
 }
 #delConf
 {
-background:#dd0011; 
+background:#dd0011;
 margin-left:25%;
 }
 #footer
