@@ -42,7 +42,7 @@ function printProjects($project)
 
     foreach($tags as $tag)
     {
-        echo"<div class = 'tag'><a href ='previous.php?tag=$tag'>$tag</a></div>";
+        echo"<div class = 'tag'><a href ='previously.php?tag=$tag'>$tag</a></div>";
     }
     echo
         "
@@ -132,7 +132,7 @@ function printNav($pageName)
             <tr><td><a href = 'about.php'>About me</a></td></tr>
             <tr><td><a href = 'https://twitter.com/_darrelld'>@_darrelld</a></td></tr>
             <tr><td><a href = 'projects.php'>Projects</a></td></tr>
-            <tr><td><a href = 'previous.php'>Older posts</a></td></tr>
+            <tr><td><a href = 'previously.php'>Older posts</a></td></tr>
 
     ";
 
