@@ -40,7 +40,7 @@ div.quote
     width: 50px;
     margin:20px;
     background-repeat: no-repeat;
-    font-family: monospace;
+    font-family: 'Mono';
 
 }
 blockquote
@@ -48,7 +48,7 @@ blockquote
     display: block;
     background:
         url('.\\images\\quotes.png') left top no-repeat;
-    border-left: 3px solid #767676;
+    border-left: 3px solid #ccc;
     padding:10px;
     text-indent: 20px;
     white-space: pre;
@@ -56,7 +56,7 @@ blockquote
     word-break: break-word;
     margin:20px;
     background-repeat: no-repeat;
-    font-family: monospace;
+    font-family: 'Mono';
     font-size: 10pt;
 }
 blockquote.code
@@ -65,14 +65,14 @@ blockquote.code
     background:
         url('.\\images\\code.png') left top no-repeat;
     font-family: Monaco;
-    font-size: 10pt;
+    font-size: 8pt;
     white-space: pre;
     padding:10px;
     padding-left:35px;
     padding-top:20px;
     word-break: break-word;
     width: 85%;
-    background-color:#E9E9E9;
+    border-radius: 10px;
     moz-border-radius: 10px;
 }
 
@@ -294,7 +294,7 @@ input[type="text"],input[type="password"]
 #para
 {
     margin-top:0px;
-    font-size:12pt;
+    font-size:15px;
 
 }
 #author

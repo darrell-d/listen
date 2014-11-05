@@ -15,12 +15,10 @@ So far I'm about 3 Chapters into the book but here is what I've found so far: Ha
 fizzBuzz y  =
 	[
 		if x `mod` 15 ==0 then
-			"FizzBuzz"
+		"FizzBuzz"
 		else if x `mod ` 5 ==0 then
-			"Buzz"
-		else if x `mod` 3 == 0 then
-			"Fizz"
-		else show x
+		"Buzz" else if x `mod` 3 == 0 then
+		"Fizz" else show x
 			| x<-[1..y]
 	]
 </blockquote>
@@ -58,12 +56,10 @@ If we did want a predicate,we would just add it in after the input. For example 
 fizzBuzz y  =
 	[
 		if x `mod` 15 ==0 then
-			"FizzBuzz"
+		"FizzBuzz"
 		else if x `mod ` 5 ==0 then
-			"Buzz"
-		else if x `mod` 3 == 0 then
-			"Fizz"
-		else show x
+		"Buzz" else if x `mod` 3 == 0 then
+		"Fizz" else show x
 			| x<-[1..y], even x
 	]
 </blockquote>
@@ -78,12 +74,10 @@ We can have as many predicates as we would like. Let's say we wanted only number
 fizzBuzz y  =
 	[
 		if x `mod` 15 ==0 then
-			"FizzBuzz"
+		"FizzBuzz"
 		else if x `mod ` 5 ==0 then
-			"Buzz"
-		else if x `mod` 3 == 0 then
-			"Fizz"
-		else show x
+		"Buzz" else if x `mod` 3 == 0 then
+		"Fizz" else show x
 			| x<-[1..y], even x, x > 42
 	]
 </blockquote>
@@ -97,12 +91,10 @@ What if we wanted to control our input range to only check for multiples of 10? 
 fizzBuzz y  =
 	[
 		if x `mod` 15 ==0 then
-			"FizzBuzz"
+		"FizzBuzz"
 		else if x `mod ` 5 ==0 then
-			"Buzz" 
-		else if x `mod` 3 == 0 then
-			"Fizz"
-		else show x
+		"Buzz" else if x `mod` 3 == 0 then
+		"Fizz" else show x
 			| x<-[10,20..y]
 	]
 </blockquote>
