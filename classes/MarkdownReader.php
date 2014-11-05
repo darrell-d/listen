@@ -20,10 +20,12 @@ class MarkdownReader
   private $raw_text;
   private $output;
   private $line_count;
+  private $current_line;
 
   function __construct($source)
   {
     $line_count = 0;
+    $current_line = "";
     if(is_file($source))
     {
       $file = fopen($source, "r");
@@ -72,10 +74,11 @@ class MarkdownReader
 
   function analyzeText($text)
   {
+    $this->current_line = $text;
     //Split up characters
-    if(!empty($text))
+    if(!empty($this->current_line))
     {
-      $chars = str_split($text);
+      $chars = str_split($this->current_line);
       echo ": ";
       foreach($chars as $key => $value)
       {
@@ -89,7 +92,11 @@ class MarkdownReader
         }
         else if($value == str_split(Symbols::SQUARE_BRACE_L)[0])
         {
-          echo Symbols::SQUARE_BRACE_L;
+          $this->expect(Symbols::TEXT);
+          $this->expect(Symbols::SQUARE_BRACE_R);
+          $this->expect(Symbols::BRACE_L);
+          $this->expect(Symbols::TEXT);
+          $this->expect(Symbols::BRACE_R);
         }
         else if($value == str_split(Symbols::POINTY_BRACE_R)[0])
         {
@@ -98,6 +105,12 @@ class MarkdownReader
       }
       echo "<br>";
     }
+  }
+
+  function expect($sym)
+  {
+
+    return true;
   }
   function parse($line)
   {
