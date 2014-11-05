@@ -40,7 +40,7 @@ div.quote
     width: 50px;
     margin:20px;
     background-repeat: no-repeat;
-    font-family: 'Mono';
+    font-family: monospace;
 
 }
 blockquote
@@ -48,7 +48,7 @@ blockquote
     display: block;
     background:
         url('.\\images\\quotes.png') left top no-repeat;
-    border-left: 3px solid #ccc;
+    border-left: 3px solid #767676;
     padding:10px;
     text-indent: 20px;
     white-space: pre;
@@ -56,8 +56,16 @@ blockquote
     word-break: break-word;
     margin:20px;
     background-repeat: no-repeat;
-    font-family: 'Mono';
+    font-family: monospace;
     font-size: 10pt;
+    background-color: #E6E6E6!important;
+}
+blockquote p
+{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  display: inline;
+  padding-left: 10px;
 }
 blockquote.code
 {
@@ -65,14 +73,12 @@ blockquote.code
     background:
         url('.\\images\\code.png') left top no-repeat;
     font-family: Monaco;
-    font-size: 8pt;
     white-space: pre;
     padding:10px;
     padding-left:35px;
     padding-top:20px;
     word-break: break-word;
     width: 85%;
-    border-radius: 10px;
     moz-border-radius: 10px;
 }
 
@@ -80,7 +86,12 @@ code
 {
     padding:5px;
     font-family: Monaco;
-    font-size:8pt;
+    font-size:10pt;
+    background-color: #E6E6E6;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 form
 {
@@ -108,6 +119,7 @@ body
     font-size:12pt;
     color:#171717;
     margin-top:25px;
+    line-height:30px;
 }
 h1,h2,h3,h4,h5,h6
 {
@@ -294,7 +306,7 @@ input[type="text"],input[type="password"]
 #para
 {
     margin-top:0px;
-    font-size:15px;
+    font-size:12pt;
 
 }
 #author
