@@ -1,4 +1,4 @@
-JAN 16 2013
+JAN 16 2014
 #MYSQL PARAMETERIZED QUERIES
 
 Most applications use a database of some form. For PHP MySQL is a popular choice of database for a variety of reasons:
@@ -24,7 +24,7 @@ Assume `$userInput` will come from any user visiting the site and is entered thr
 In the example above this line is ripe for SQL injection.  If `$query` were to be run with a the command `mysql_query($query)` a user could pass in 'dirty' input. For example a user could enter as input
 >a'; drop mySuperImportantTable WHERE 1=1
 
-Noticed the '**a';**' at the start of the query. It makes the above query:
+Noticed the `a';` at the start of the query. It makes the above query:
 
 `$query = "SELECT * FROM mySuperImportantTable WHERE user =  'a'; DROP mySuperImportantTable WHERE 1=1 '";`
 

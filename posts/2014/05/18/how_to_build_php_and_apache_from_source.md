@@ -23,7 +23,7 @@ APR: `apt-get install libapr1-dev libaprutil1-dev`. Apr is needed for the error 
 
 You should now have a functioning Apache server
 
-######Key commands from configuration script
+####Key commands from configuration script
 `--prefix=/usr/local/apache`: This is where apache will be installed
 
 `--enable-so`: This tells Apache to build `so` modules modules.
@@ -50,7 +50,7 @@ libxml : `apt-get install libxml2-dev`
 4. Make `make`
 5. Make install `make install`
 
-######Key commands
+####Key commands
 `--with-apxs2=/usr/local/apache/bin/apxs`: This enables PHP to create libphp5.so. This mod is required so that Apache can rung PHP files.
 
 ###Congfiguration with Apache
