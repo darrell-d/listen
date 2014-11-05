@@ -1,5 +1,5 @@
 <?php
 include('../classes/MarkdownReader.php');
 
-$markdown = new MarkDownReader('../posts/2013/01/31/back1200.md');
+$markdown = new MarkDownReader('../posts/2014/01/16/mysql_parameterized_queries.md');
 ?>
