@@ -7,8 +7,8 @@ class MySQL
 	private $db_pass;
 	private $db_server;
 	private $db_name;
-        private $db_mysqli;
-	
+  private $db_mysqli;
+
 	function __construct($server,$user,$pass,$dbName)
 	{
 		$this->db_server = $server;
@@ -39,7 +39,7 @@ class MySQL
         function getPreparedQuery($query)
         {
             $preparedStatement = $this->db_mysqli->prepare($query);
-            
+
             return $preparedStatement;
         }
         function prepare($query)
