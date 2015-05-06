@@ -192,7 +192,21 @@ function getLatestPost()
 
     }
     $files = getFoldersAndFiles($path, "files");
-    $latestPost = $path . $files[0];
+    $mdFound = false;
+    $mdIndex = 0;
+    while(!$mdFound)
+    {
+        if(strpos($files[$mdIndex],".md") >0 )
+        {
+            $mdFound = true;
+        }
+        else
+        {
+            $mdIndex++;
+        }
+
+    }
+    $latestPost = $path . $files[$mdIndex];
 
     return $latestPost;
 }
