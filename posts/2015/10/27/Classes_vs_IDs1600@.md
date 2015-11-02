@@ -24,7 +24,7 @@ Now in CSS I can use a selector to apply the bold font face to just that paragra
 
 Note that you specify something is an ID by using the # symbol. Someone decided this a long time ago and that's just the way it is now.
 
-Now I'd I want to highlight my favorite parts of it. There are 3 lines I think are really cool so this is a great opportunity to use a class since I play to highlight more than one place.
+Now if I want to highlight my favorite parts of it. There are 3 lines I think are really cool so this is a great opportunity to use a class since I play to highlight more than one place.
 
 First I'll put a span around the parts I want to highlight with a class name of highlight:
 
@@ -43,10 +43,9 @@ One big difference to keep in mind between classes and IDs is that you can only 
 
 A tag can also have an ID and one or more classes associated with it. See the example below:
 
-- Classes, IDs and tags are hooks
-- IDs are unique
-- Classes are for multiple items
-- IDs can be used in the URL to link to a section
-- Classes and IDs have no meaning without CSS or javascript to back them up
-- But should be named appropriately
-- Javsacript IDs become variables
+<iframe width="40%" height="475" src="https://jsfiddle.net/ddefreitas/zr5mnwdk/7/embedded/result,html,css,js" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+One last bonus to keep in mind about IDs is that they can be used to jump a page directly to where that ID is. Ever been to a page where you can jump to the bottom of the page? Normally you just give an element an ID of "footer" and then link to it using something like this:
+
+<a href="#footer">Go to footer</a>
