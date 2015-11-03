@@ -27,7 +27,18 @@ printProjects(
         "<p>My attempt at a more in depth console.log() functiong</p><p>log.me provides more information upfront about variables displayed to thec onsole that regular cosole.log call would. It is especially usefull in quickly highlighting user type errors</p>",
         "title" => "log.me",
         "poster" => "darrelld",
-        "date" => date("now"),
+        "date" => "1446590886",
+        "tags" => "project"
+        ));
+printProjects(   
+    array(
+        "id" => "N/A",
+        "url" => "https://github.com/darrell-d/freeze",
+        "post" => 
+        "<p>A simple AWS Glacier Java command line AWS upload tool. Currently in early alpha</p>",
+        "title" => "freeze",
+        "poster" => "darrelld",
+        "date" =>"1446590886",
         "tags" => "project"
         ));
 printFooter();
