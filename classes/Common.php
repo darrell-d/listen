@@ -135,7 +135,7 @@ function printNav($pageName)
             <li><td><a href = 'about.php'>About me</a></li>
             <li><td><a href = 'projects.php'>Projects</a></li>
             <li><td><a href = 'previously.php'>Older posts</a></li>
-            <li><td><a href = 'https://twitter.com/_darrelld'>@_darrelld</a></li>
+            <li><td><a href = 'https://twitter.com/_darrelld' target = '_blank'>@_darrelld</a></li>
         </ul>
     </span>
     ";
