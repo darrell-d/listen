@@ -129,23 +129,15 @@ function printNav($pageName)
 
     echo
     "
-        <table id = 'navigation'>
-            <tr><td><b><a href ='index.php'>Home</a></b></td></tr>
-            <tr><td><a href = 'about.php'>About me</a></td></tr>
-            <tr><td><a href = 'https://twitter.com/_darrelld'>@_darrelld</a></td></tr>
-            <tr><td><a href = 'projects.php'>Projects</a></td></tr>
-            <tr><td><a href = 'previously.php'>Older posts</a></td></tr>
-
-    ";
-
-    //include('recently.php');
-
-    echo
-    "
-        <tr id= 'sidebar-posts'>
-            <td></td>
-        </tr>
-        </table>
+    <span id = 'navigation-container'>
+        <ul id = 'navigation'>
+            <li><a href ='index.php'>Home</a></li>
+            <li><td><a href = 'about.php'>About me</a></li>
+            <li><td><a href = 'projects.php'>Projects</a></li>
+            <li><td><a href = 'previously.php'>Older posts</a></li>
+            <li><td><a href = 'https://twitter.com/_darrelld'>@_darrelld</a></li>
+        </ul>
+    </span>
     ";
 }
 function addcomments($html, $id)

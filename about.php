@@ -6,9 +6,7 @@ printHeader("darrelld - Projects");
 ?>
 </head>
 <body>
-    <span id ="navigation">
 <?php printNav($_SERVER['PHP_SELF'])?>
-    </span>
 <?php 
 printProjects(   
     array(

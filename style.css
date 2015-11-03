@@ -43,6 +43,10 @@ div.quote
     font-family: monospace;
 
 }
+iframe
+{
+    width:100%;
+}
 blockquote
 {
     display: block;
@@ -117,7 +121,7 @@ body
     background-attachment: fixed;
     font-family:Monaco;
     font-size:12pt;
-    color:#171717;
+    color: #193441;
     margin-top:25px;
     line-height:30px;
 }
@@ -225,38 +229,45 @@ input[type="text"],input[type="password"]
 {
     display:inline;
 }
-#navigation
+#navigation,#navigation-container
 {
-    position:fixed;
-    width:10%;
-    letter-spacing:0px;
-    top:25px;
     font-family: Arial;
-    font-size:16px;
+    font-size: 12pt;
+    margin-right: auto;
+    margin-left: auto;
+    display: table;
+    list-style-type: none;
+    width: 60%;
+    padding: 0px;
 }
 #navigation a
 {
   font-size:20px!important;
 }
+#navigation li
+{
+    display: inline;
+    padding: 0px 20px 0px 20px;
+}
 #entry,.project
 {
-    display: inline-block;
-    margin-left:10%;
-    width:85%;
-    top:2%;
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+    width:50%;
     padding:20px;
     font-size:25px;
     margin-bottom: 25px;
     font-family:Arial, Helvetica;
-    background:#D3D3D3;
-
+    background: #FBFBFB;
     box-shadow: 3px 3px 1px #193441;
     -moz-border-radius: 5px;
     border-radius: 5px;
+    border: solid 5px #193441;
 }
 .project
 {
-    background:#CFF09E;
+    background: #FBFBFB;
 }
 #admin_area
 {

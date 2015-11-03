@@ -31,9 +31,7 @@ else
 
 
 <body>
-    <span id ="navigation">
     <?php printNav($_SERVER['PHP_SELF'])?>
-    </span>
 
 <?php
 

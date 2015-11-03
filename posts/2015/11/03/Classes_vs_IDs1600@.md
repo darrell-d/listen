@@ -9,7 +9,7 @@ The main thing to keep in mind is that IDs are meant to be unique and will only 
 
 Here is a basic HTML layout of a bit of text in a poem:
 
-<iframe width="40%" height="475" src="http://jsfiddle.net/ddefreitas/uq08xehj/6/embedded/result,html,css,js" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe height="475" src="http://jsfiddle.net/ddefreitas/uq08xehj/6/embedded/result,html,css,js" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 
 Now I want this snippet of poetry to stand out some more so I want only the first line to be in bold.
@@ -47,7 +47,7 @@ One big difference to keep in mind between classes and IDs is that you can only 
 
 A tag can also have an ID and one or more classes associated with it as can be seen used in the final output:
 
-<iframe width="40%" height="475" src="https://jsfiddle.net/ddefreitas/zr5mnwdk/7/embedded/result,html,css,js" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe height="475" src="https://jsfiddle.net/ddefreitas/zr5mnwdk/7/embedded/result,html,css,js" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 If you look carefully in the example above you'll see that I also selected all headers and paragraph tags and changed their font using the element name as a selector. 
 
