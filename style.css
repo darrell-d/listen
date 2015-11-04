@@ -209,6 +209,11 @@ input[type="text"],input[type="password"]
 {
     font-size:20px;
 }
+#twtrLogo
+{
+    width: 32px;
+    position: absolute;
+}
 #item
 {
     margin-left:15%;

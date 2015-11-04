@@ -135,7 +135,7 @@ function printNav($pageName)
             <li><a href = 'about.php'>About me</a></li>
             <li><a href = 'projects.php'>Projects</a></li>
             <li><a href = 'previously.php'>Older posts</a></li>
-            <li><a href = 'https://twitter.com/_darrelld' target = '_blank'>@_darrelld</a></li>
+            <li><a href = 'https://twitter.com/_darrelld' target = '_blank'><img id = 'twtrLogo' src = 'images/TwitterLogo.png' title ='@_darrelld on Twitter '></a></li>
         </ul>
     </span>
     ";
