@@ -260,7 +260,7 @@ input[type="text"],input[type="password"]
     margin-bottom: 25px;
     font-family:Arial, Helvetica;
     background: #FBFBFB;
-    box-shadow: 3px 3px 1px #193441;
+    box-shadow: 4px 4px 0px #193441;
     -moz-border-radius: 5px;
     border-radius: 5px;
     border: solid 5px #193441;
