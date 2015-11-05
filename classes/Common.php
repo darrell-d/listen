@@ -132,9 +132,9 @@ function printNav($pageName)
     <span id = 'navigation-container'>
         <ul id = 'navigation'>
             <li><a href ='index.php'>Home</a></li>
-            <li><a href = 'about.php'>About me</a></li>
-            <li><a href = 'projects.php'>Projects</a></li>
-            <li><a href = 'previously.php'>Older posts</a></li>
+            <li><a href = 'about.php'>about me</a></li>
+            <li><a href = 'projects.php'>projects</a></li>
+            <li><a href = 'previously.php'>previously</a></li>
             <li><a href = 'https://twitter.com/_darrelld' target = '_blank'><img id = 'twtrLogo' src = 'images/TwitterLogo.png' title ='@_darrelld on Twitter '></a></li>
         </ul>
     </span>
