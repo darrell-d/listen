@@ -7,7 +7,7 @@ class MySQL
 	private $db_pass;
 	private $db_server;
 	private $db_name;
-  private $db_mysqli;
+        private $db_mysqli;
 
 	function __construct($server,$user,$pass,$dbName)
 	{
