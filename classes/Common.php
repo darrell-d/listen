@@ -4,7 +4,7 @@ include_once("MySQL.php");
 include_once('markdown.php');
 
 global $mySQL_connection;
-$mySQL_connection = new MySQL($mysql_server,$mysql_user,$mysql_pass,$mysql_db);
+//$mySQL_connection = new MySQL($mysql_server,$mysql_user,$mysql_pass,$mysql_db);
 $settings = parse_ini_file(dirname(__FILE__) . '/../config.ini');
 date_default_timezone_set("America/New_York");
 
