@@ -77,7 +77,7 @@ function printPosts($post,$printComments = true)
 
     echo
     "
-    <div id ='entry'>
+    <div class ='entry'>
             <div id = 'post'>
             <div id = 'para'>
             ".
@@ -129,15 +129,13 @@ function printNav($pageName)
 
     echo
     "
-    <span id = 'navigation-container'>
-        <ul id = 'navigation'>
-            <li><a href ='index.php'>Home</a></li>
-            <li><a href = 'about.php'>about me</a></li>
-            <li><a href = 'projects.php'>projects</a></li>
-            <li><a href = 'previously.php'>previously</a></li>
-            <li><a href = 'https://twitter.com/_darrelld' target = '_blank'><img id = 'twtrLogo' src = 'images/TwitterLogo.png' title ='@_darrelld on Twitter '></a></li>
-        </ul>
-    </span>
+    <nav>
+            <span><a href ='index.php'>Home</a></span>
+            <span><a href = 'about.php'>about me</a></span>
+            <span><a href = 'projects.php'>projects</a></span>
+            <span><a href = 'previously.php'>previously</a></span>
+            <span><a href = 'https://twitter.com/_darrelld' target = '_blank'><img id = 'twtrLogo' src = 'images/TwitterLogo_white.png' title ='@_darrelld on Twitter '></a></span>
+    </nav>
     ";
 }
 function addcomments($html, $id)
