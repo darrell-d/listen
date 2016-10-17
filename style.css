@@ -9,8 +9,8 @@ a {
 }
 
 a:visited {
-    /* color: #42A4FF; */
-    text-decoration: none;
+    color: #42A4FF;
+    /* text-decoration: none; */
 }
 
 a:hover {
@@ -247,28 +247,29 @@ input[type="password"] {
 .entry,
 .project,
 nav{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-    padding: 20px;
-    font-size: 25px;
-    margin-bottom: 25px;
-    font-family: Arial, Helvetica;
-    box-shadow: 4px 4px 0px #102940;
+    /* display: block; */
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    /* width: 80%; */
+    /* padding: 20px; */
+    /* font-size: 25px; */
+    /* margin-bottom: 25px; */
+    /* font-family: Arial, Helvetica; */
+    /* box-shadow: 4px 4px 0px #102940; */
     -moz-border-radius: 5px;
-    border-radius: 5px;
-    border: solid 5px #102940;
+    /* border-radius: 5px; */
+    /* border: solid 5px #102940; */
 }
 nav
 {
-    background-color: #42A4FF;
+    /* background-color: #42A4FF; */
+    /* max-height:35px; */
 }
 nav span
 {
-    width: 256px;
-    display: inline-block;
-    font-size: 24pt;
+    /* width: 256px; */
+    /* display: inline-block; */
+    /* font-size: 24pt; */
 }
 nav span a
 {
