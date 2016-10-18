@@ -130,7 +130,7 @@ function printNav($pageName)
     echo
     "
     <nav>
-            <span><a href ='index.php'>home</a></span>
+            <span><a href ='index.php'>Home</a></span>
             <span><a href = 'about.php'>about me</a></span>
             <span><a href = 'projects.php'>projects</a></span>
             <span><a href = 'previously.php'>previously</a></span>
@@ -156,6 +156,7 @@ function printFooter()
 	<script src='scripts.js' defer></script>
 	<script src='bootstrap/js/bootstrap.min.js' defer></script>
 	<script src='https://login.persona.org/include.js' defer></script>
+	<script src = 'analyticstracking.js' defer></script>
 </body>
 </html>
 ";
