@@ -14,13 +14,18 @@ a:visited {
 }
 
 a:hover {
-    text-decoration: none;
-    color: #FFB742!important;
+    text-decoration: underline;
+    color: #102940!important;
 }
 
 a:active {
     text-decoration: none;
     color: #FFB742;
+}
+
+nav a:hover
+{
+    text-decoration: none;
 }
 
 div.quote {
@@ -206,10 +211,9 @@ input[type="password"] {
     font-size: 20px;
 }
 
-#twtrLogo {
-    width: 64px;
+#twtrLogo, #gitHubLogo {
+    width: 32px;
     position: relative;
-    top: 20px;
 }
 
 #item {
@@ -255,7 +259,7 @@ nav{
     font-size: 25px;
     margin-bottom: 25px;
     font-family: Arial, Helvetica;
-    box-shadow: 4px 4px 0px #102940;
+    box-shadow: 4px 4px 0px rgba(366,183,66,0.4);
     -moz-border-radius: 5px;
     border-radius: 5px;
     border: solid 5px #102940;
@@ -266,9 +270,8 @@ nav
 }
 nav span
 {
-    width: 256px;
-    display: inline-block;
-    font-size: 24pt;
+    display: block;
+    font-size: 16pt;
 }
 nav span a
 {

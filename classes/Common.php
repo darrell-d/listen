@@ -131,10 +131,17 @@ function printNav($pageName)
     "
     <nav>
             <span><a href ='index.php'>Home</a></span>
-            <span><a href = 'about.php'>about me</a></span>
-            <span><a href = 'projects.php'>projects</a></span>
-            <span><a href = 'previously.php'>previously</a></span>
-            <span><a href = 'https://twitter.com/_darrelld' target = '_blank'><img id = 'twtrLogo' src = 'images/TwitterLogo_white.png' title ='@_darrelld on Twitter '></a></span>
+            <span><a href = 'about.php'>About me</a></span>
+            <span><a href = 'projects.php'>Projects</a></span>
+            <span><a href = 'previously.php'>Previously</a></span>
+            <span>
+                <a href = 'https://twitter.com/_darrelld' target = '_blank'>
+                    <img id = 'twtrLogo' src = 'images/TwitterLogo_white.png' title ='@_darrelld on Twitter '>
+                </a>
+                <a href = 'https://github.com/darrell-d' target = '_blank'>
+                    <img id = 'gitHubLogo' src = 'images/GitHubLogo.png' title ='darrelld on Git Hub'>
+                </a>
+            </span>
     </nav>
     ";
 }
