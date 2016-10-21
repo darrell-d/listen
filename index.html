@@ -18,15 +18,38 @@
 
 <body>
 
-
-    <nav class="container-fluid">
-        <div class = "row">
-            <span><a href ='index.php'>Home</a></span>
-            <span><a href = 'about.php'>about me</a></span>
-            <span><a href = 'projects.php'>projects</a></span>
-            <span><a href = 'previously.php'>previously</a></span>
-            <span><a href = 'https://twitter.com/_darrelld' target = '_blank'><img id = 'twtrLogo' src = 'images/TwitterLogo_white.png' title ='@_darrelld on Twitter '></a></span>
-        </div>
+    <nav>
+        <span id="block-holder">
+            <div class="blocks">
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+            </div>
+        </span>
+        <span><a href="index.php">Home</a></span>
+        <span><a href="about.php">About me</a></span>
+        <span><a href="projects.php">Projects</a></span>
+        <span><a href="previously.php">Previously</a></span>
+        <span>
+                <a href="https://twitter.com/_darrelld" target="_blank">
+                    <img id="twtrLogo" src="images/TwitterLogo_white.png" title="@_darrelld on Twitter ">
+                </a>
+                <a href="https://github.com/darrell-d" target="_blank">
+                    <img id="gitHubLogo" src="images/GitHubLogo.png" title="darrelld on Git Hub">
+                </a>
+            </span>
     </nav>
 
     <div class='entry'>
@@ -41,11 +64,30 @@
         </div>
         <div class='tags'></div>
     </div>
-    <script src='//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js' defer></script>
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
     <script src='scripts.js' defer></script>
     <script src='bootstrap/js/bootstrap.min.js' defer></script>
     <script src='https://login.persona.org/include.js' defer></script>
-    <script src='analyticstracking.js' defer></script>
+    <script>
+        $(document).ready(function () {
+            var i = 0;
+            blocks = document.createElement("div");
+            while (i < 115) {
+                var j = 0;
+                while (j < 15) {
+                    tinyBlock = document.createElement("i");
+                    tinyBlock.style = "background-color= rgba(77,110,140)";
+                    j++;
+
+                }
+                blocks.appendChild(tinyBlock);
+                i++;
+            }
+            var blockHolder = document.getElementById("block-holder");
+            blockHolder.appendChild(blocks);
+
+        });
+    </script>
 </body>
 
 </html>

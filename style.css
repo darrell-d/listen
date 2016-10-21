@@ -489,3 +489,16 @@ input[type='submit'] {
 #adminLoginBtn {
     float: right;
 }
+
+.blocks
+{
+    float:right;
+}
+.blocks i
+{
+    width:10px;
+    height:10px;
+    display: block;
+    margin:1px;
+    background-color: red;
+}
